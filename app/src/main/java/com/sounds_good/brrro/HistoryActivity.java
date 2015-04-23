@@ -5,23 +5,20 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-/**
- * Created by pgoggijr on 4/23/15.
- * Activity used for tracking workouts
- */
-public class HistoryActivity extends ActionBarActivity{
+
+public class HistoryActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_history);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_history, menu);
         return true;
     }
 
@@ -40,4 +37,3 @@ public class HistoryActivity extends ActionBarActivity{
         return super.onOptionsItemSelected(item);
     }
 }
-

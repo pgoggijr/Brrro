@@ -5,16 +5,21 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.content.Intent;
 
 
 public class MenuActivity extends ActionBarActivity {
 
     public void checkHistory(View view) {
         System.out.println("checking history");
+        Intent intent = new Intent(MenuActivity.this, HistoryActivity.class);
+        MenuActivity.this.startActivity(intent);
     }
 
     public void logWorkout(View view) {
         System.out.println("logging workout");
+        Intent intent = new Intent(MenuActivity.this, WorkoutActivity.class);
+        MenuActivity.this.startActivity(intent);
     }
 
     @Override

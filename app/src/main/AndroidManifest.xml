@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HistoryActivity"
+            android:label="@string/title_activity_history"
+            android:parentActivityName=".MenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sounds_good.brrro.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".WorkoutActivity"
+            android:label="@string/title_activity_workout"
+            android:parentActivityName=".MenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sounds_good.brrro.MenuActivity" />
+        </activity>
     </application>
 
 </manifest>
