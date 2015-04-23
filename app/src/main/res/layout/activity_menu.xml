@@ -11,7 +11,9 @@
         android:text="@string/log_workout_button"
         android:id="@+id/log_workout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="141dp" />
+        android:layout_marginTop="141dp"
+        android:onClick="logWorkout"
+        android:nestedScrollingEnabled="false" />
 
     <Button
         android:layout_width="wrap_content"
@@ -20,6 +22,7 @@
         android:id="@+id/check_history"
         android:layout_below="@+id/log_workout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="77dp" />
+        android:layout_marginTop="77dp"
+        android:onClick="checkHistory" />
 
 </RelativeLayout>
