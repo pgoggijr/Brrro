@@ -25,4 +25,14 @@
         android:layout_marginTop="77dp"
         android:onClick="checkHistory" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="WELCOME TO OUR APP"
+        android:id="@+id/textView"
+        android:layout_marginTop="63dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
