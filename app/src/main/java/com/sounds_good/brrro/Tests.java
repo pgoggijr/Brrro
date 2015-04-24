@@ -21,11 +21,14 @@ public class Tests {
             arr[i] = 1;
         }
         $.createExercise($.BENCH_PRESS, 40, arr).printExercise();
+        System.out.println("Should be 1");
+        System.out.println($.createExercise(10000, 40).getType());
 
         //Exercise Tests
         System.out.println();
         System.out.println("EXERCISE TESTS\n----------------------------------------");
         Exercise squatTest = $.createExercise($.SQUAT, 50);
+        Exercise badParams = new Exercise(-1,-1,-1,1);
         System.out.println("Should be array of all 0's");
         squatTest.printExercise();
         System.out.println("First item should be 5");
@@ -59,5 +62,9 @@ public class Tests {
             }
         }
         System.out.println("]");
+        System.out.println("Should be 1");
+        System.out.println(badParams.getSets().length);
+        System.out.println("Should be 10");
+        System.out.println(badParams.getWeight());
     }
 }

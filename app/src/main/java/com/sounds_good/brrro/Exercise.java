@@ -17,6 +17,9 @@ public class Exercise {
         if (repCount <= 0) {
             repCount = 1;
         }
+        if (xWeight <= 0) {
+            xWeight = 10;
+        }
         sets = new int[setCount];
         type = exerciseType;
         reps = repCount;

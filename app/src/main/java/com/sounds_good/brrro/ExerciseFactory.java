@@ -40,7 +40,7 @@ public class ExerciseFactory {
             case CABLE_CRUNCHES:
                 return new Exercise(3, 10, weight, type);
             default:
-                return new Exercise(0, 0, weight, type);
+                return new Exercise(5, 5, weight, 1);
         }
     }
 
