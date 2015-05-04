@@ -57,7 +57,7 @@ public class WorkoutDatabaseAdapter {
         long workoutId;
 
         //put in and insert workout Values
-        workoutValues.put(WorkoutDatabaseHelper.COLUMN_DATE,workout.getDate());
+        workoutValues.put(WorkoutDatabaseHelper.COLUMN_DATE,workout.getDate().getTime());
         workoutValues.put(WorkoutDatabaseHelper.COLUMN_TYPE,workout.getType());
 
         try {

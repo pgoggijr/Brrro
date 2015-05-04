@@ -1,16 +1,25 @@
 package com.sounds_good.brrro;
 
+import java.util.Date;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.content.Intent;
 
 public class WorkoutActivity extends AppCompatActivity {
+    Workout workout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        int type;
+        Intent intent = getIntent();
+        type = intent.getIntExtra("type",0);
+        workout = new Workout(type,new Date());
+        workout.printWorkout();
+
         setContentView(R.layout.activity_workout);
     }
 

@@ -17,8 +17,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void logWorkout(View view) {
-        System.out.println("logging workout");
         Intent intent = new Intent(MenuActivity.this, WorkoutActivity.class);
+        intent.putExtra("type",Workout.WORKOUT_A);
         MenuActivity.this.startActivity(intent);
     }
 
