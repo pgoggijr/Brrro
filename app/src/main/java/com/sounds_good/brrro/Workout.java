@@ -5,5 +5,7 @@ package com.sounds_good.brrro;
  */
 public interface Workout {
     public Exercise[] getExercises();
+    public int getTotalSets();
     public int getType();
+    public int getDate();
 }
