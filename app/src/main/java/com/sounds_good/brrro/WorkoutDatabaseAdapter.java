@@ -12,6 +12,7 @@ import android.database.Cursor;
 
 /**
  * Created by Peter on 5/4/2015.
+ * adapter for database abstraction
  */
 public class WorkoutDatabaseAdapter {
     private SQLiteDatabase database;

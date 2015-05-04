@@ -16,7 +16,7 @@ public class Workout {
         ExerciseFactory factory = new ExerciseFactory();
 
         this.date = date;
-        if(type == WORKOUT_A){
+        if(type == WORKOUT_A) {
             exercises = new Exercise[8];
             exercises[0] = factory.createExercise(
                     ExerciseFactory.SQUAT,45);
