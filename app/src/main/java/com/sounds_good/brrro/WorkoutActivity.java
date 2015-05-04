@@ -1,5 +1,6 @@
 package com.sounds_good.brrro;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import android.os.Bundle;
@@ -13,11 +14,14 @@ public class WorkoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMDD");
+
+
         super.onCreate(savedInstanceState);
         int type;
         Intent intent = getIntent();
         type = intent.getIntExtra("type",0);
-        workout = new Workout(type,new Date());
+        workout = new Workout(type,format.format(new Date()));
         workout.printWorkout();
 
         setContentView(R.layout.activity_workout);

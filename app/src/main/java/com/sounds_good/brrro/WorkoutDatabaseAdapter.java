@@ -2,7 +2,6 @@ package com.sounds_good.brrro;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Vector;
 
 import android.content.Context;
 import android.database.SQLException;
@@ -22,7 +21,7 @@ public class WorkoutDatabaseAdapter {
     private String[] SetsColumns = { WorkoutDatabaseHelper.COLUMN_ID,
         WorkoutDatabaseHelper.COLUMN_WORKOUT, WorkoutDatabaseHelper.COLUMN_NUMBER,
         WorkoutDatabaseHelper.COLUMN_REPS, WorkoutDatabaseHelper.COLUMN_WEIGHT,
-        WorkoutDatabaseHelper.COLUMN_TYPE };
+        WorkoutDatabaseHelper.COLUMN_MAX, WorkoutDatabaseHelper.COLUMN_TYPE };
 
     public WorkoutDatabaseAdapter(Context context) {
         dbHelper = new WorkoutDatabaseHelper(context);
@@ -36,15 +35,66 @@ public class WorkoutDatabaseAdapter {
         dbHelper.close();
     }
 
-    public Date[] getWorkouts(){
-        Date[] workoutDates;
+    public Workout getWorkout(String date) {
+        Workout toReturn;
+        int id;
+        int workoutType;
+        Exercise[] exercises;
+        int[] exerciseTypes;
+        Cursor cursor = database.query(WorkoutDatabaseHelper.TABLE_WORKOUTS, WorkoutsColumns,
+                WorkoutDatabaseHelper.COLUMN_DATE + " = " + date,null,null,null,null);
+        if(cursor.getCount() < 1) {
+            return null;
+        }
+        cursor.moveToNext();
+        id = cursor.getInt(0);
+        workoutType = cursor.getInt(2);
+        cursor.close();
+        if(workoutType == Workout.WORKOUT_A) {
+            exerciseTypes = Workout.A_EXERCISES;
+        } else {
+            exerciseTypes = Workout.B_EXERCISES;
+        }
+        exercises = new Exercise[exerciseTypes.length];
+        for(int i = 0; i < exercises.length; i++) {
+            exercises[i] = getExercise(id, exerciseTypes[i]);
+        }
+
+        return new Workout(id,date,exercises);
+    }
+
+    private Exercise getExercise(int workoutID, int exerciseType) {
+        Exercise toRet;
+        int[] setArr;
+        Cursor cursor = database.query(WorkoutDatabaseHelper.TABLE_SETS, SetsColumns,
+                WorkoutDatabaseHelper.COLUMN_WORKOUT + " = " + workoutID +
+                        " AND " + WorkoutDatabaseHelper.COLUMN_TYPE + " = " +
+                        exerciseType,
+                null, null, null, WorkoutDatabaseHelper.COLUMN_NUMBER + " ASC");
+
+        if (cursor.getCount() < 1) {
+            return null;
+        }
+        setArr = new int[cursor.getCount()];
+
+        while(cursor.moveToNext()) {
+            setArr[cursor.getInt(2)] = cursor.getInt(3);
+        }
+        cursor.moveToPrevious();
+        toRet = new Exercise(setArr.length,cursor.getInt(5),cursor.getInt(4),cursor.getInt(6),setArr);
+        cursor.close();
+        return toRet;
+    }
+
+    public String[] getWorkouts(){
+        String[] workoutDates;
         int i = 0;
         Cursor cursor = database.query(WorkoutDatabaseHelper.TABLE_WORKOUTS, WorkoutsColumns,
                 null, null, null, null, WorkoutDatabaseHelper.COLUMN_DATE + " DESC");
 
-        workoutDates = new Date[cursor.getCount()];
+        workoutDates = new String[cursor.getCount()];
         while(cursor.moveToNext()){
-            workoutDates[i] = new Date(cursor.getInt(1) * 1000L);
+            workoutDates[i] = cursor.getString(1);
             i++;
         }
 
@@ -52,13 +102,14 @@ public class WorkoutDatabaseAdapter {
         return workoutDates;
     }
     public boolean insertWorkout(Workout workout) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         ContentValues workoutValues = new ContentValues();
         database = dbHelper.getWritableDatabase();
         Exercise[] exercises = workout.getExercises();
         long workoutId;
 
         //put in and insert workout Values
-        workoutValues.put(WorkoutDatabaseHelper.COLUMN_DATE,workout.getDate().getTime());
+        workoutValues.put(WorkoutDatabaseHelper.COLUMN_DATE,workout.getDate());
         workoutValues.put(WorkoutDatabaseHelper.COLUMN_TYPE,workout.getType());
 
         try {

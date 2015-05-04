@@ -8,11 +8,29 @@ public class Workout {
     public final static int WORKOUT_A = 0;
     public final static int WORKOUT_B = 1;
 
+    public final static int[] A_EXERCISES = new int[] {ExerciseFactory.SQUAT,
+        ExerciseFactory.BENCH_PRESS, ExerciseFactory.BENT_OVER_ROW,
+        ExerciseFactory.BARBELL_SHRUGS, ExerciseFactory.TRICEP_EXTENSIONS,
+        ExerciseFactory.INCLINE_CURLS, ExerciseFactory.HYPEREXTENSIONS,
+        ExerciseFactory.CABLE_CRUNCHES};
+    public final static int[] B_EXERCISES = new int[] {ExerciseFactory.SQUAT,
+            ExerciseFactory.DEADLIFT, ExerciseFactory.STANDING_PRESS,
+            ExerciseFactory.BENT_OVER_ROW, ExerciseFactory.CLOSE_GRIP_BENCH_PRESS,
+            ExerciseFactory.INCLINE_CURLS, ExerciseFactory.CABLE_CRUNCHES};
+
     private Exercise[] exercises;
     private int type;
-    private Date date;
+    private String date;
 
-    public Workout(int type, Date date) {
+    //Construct with a full exercise array
+    public Workout(int type, String date, Exercise[] exercises) {
+        this.type = type;
+        this.date = date;
+        this.exercises = exercises;
+    }
+
+    //create new workout without exercise array, generating based on type
+    public Workout(int type, String date) {
         ExerciseFactory factory = new ExerciseFactory();
 
         this.date = date;
@@ -69,11 +87,12 @@ public class Workout {
     public int getType() {
         return type;
     }
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
     public void printWorkout() {
+        System.out.println(date);
         for(Exercise exercise : exercises) {
             exercise.printExercise();
         }
