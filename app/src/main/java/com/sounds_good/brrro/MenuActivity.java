@@ -22,9 +22,10 @@ public class MenuActivity extends AppCompatActivity {
 
     public void logWorkout(View view) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        Intent intent = new Intent(MenuActivity.this, WorkoutAActivity.class);
+        Intent intent = new Intent(MenuActivity.this, WorkoutActivity.class);
         System.out.println(sdf.format(new Date()));
         intent.putExtra("date",sdf.format(new Date()));
+        intent.putExtra("type",Workout.WORKOUT_B);
         MenuActivity.this.startActivity(intent);
     }
 
@@ -32,7 +33,7 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        Workout test = new Workout(0,sdf.format(new Date()));
+        Workout test = new Workout(1,sdf.format(new Date()));
         Exercise[] exercises = test.getExercises();
         exercises[0].updateSet(0);
         exercises[0].updateSet(0);
