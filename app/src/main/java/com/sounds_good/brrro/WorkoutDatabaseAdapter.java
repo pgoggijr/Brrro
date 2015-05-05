@@ -127,6 +127,7 @@ public class WorkoutDatabaseAdapter {
             int[] currSets = curr.getSets();
             int currWeight = curr.getWeight();
             int currType = curr.getType();
+            int currReps = curr.getReps();
             for (int j = 0; j < currSets.length; j++) {
                 ContentValues setValues = new ContentValues();
 
@@ -135,6 +136,7 @@ public class WorkoutDatabaseAdapter {
                 setValues.put(WorkoutDatabaseHelper.COLUMN_REPS, currSets[j]);
                 setValues.put(WorkoutDatabaseHelper.COLUMN_WEIGHT, currWeight);
                 setValues.put(WorkoutDatabaseHelper.COLUMN_TYPE, currType);
+                setValues.put(WorkoutDatabaseHelper.COLUMN_MAX, currReps);
 
                 try{
                     database.insert(WorkoutDatabaseHelper.TABLE_SETS,

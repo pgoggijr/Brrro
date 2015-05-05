@@ -27,16 +27,16 @@ public class WorkoutDatabaseHelper extends SQLiteOpenHelper {
     //database creation statement
     private static final String CREATE_WORKOUTS = "CREATE TABLE "
             + TABLE_WORKOUTS + "(" + COLUMN_ID
-            + " INTEGER PRIMARY KEY AUTO_INCREMENT, "
+            + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_DATE + " VARCHAR(8), "
             + COLUMN_TYPE + " INTEGER);";
 
     private static final String CREATE_SETS = "CREATE TABLE "
-            + TABLE_SETS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTO_INCREMENT, "
+            + TABLE_SETS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_WORKOUT + " INTEGER NOT NULL, "
-            + COLUMN_NUMBER + " INTEGER UNIQUE, "
-            + COLUMN_REPS + " INTEGER UNIQUE, "
-            + COLUMN_WEIGHT + " INTEGER UNIQUE, "
+            + COLUMN_NUMBER + " INTEGER, "
+            + COLUMN_REPS + " INTEGER, "
+            + COLUMN_WEIGHT + " INTEGER, "
             + COLUMN_TYPE + " INTEGER NOT NULL, "
             + COLUMN_MAX + " INTEGER NOT NULL, "
             + "FOREIGN KEY(" + COLUMN_WORKOUT + ") REFERENCES " + TABLE_WORKOUTS + "(" + COLUMN_ID + "));";
@@ -49,10 +49,10 @@ public class WorkoutDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_WORKOUTS);
-        db.execSQL(CREATE_SETS);
         System.out.println(CREATE_WORKOUTS);
         System.out.println(CREATE_SETS);
+        db.execSQL(CREATE_WORKOUTS);
+        db.execSQL(CREATE_SETS);
     }
 
     @Override

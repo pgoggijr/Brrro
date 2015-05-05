@@ -32,7 +32,12 @@ public class MenuActivity extends AppCompatActivity {
         exercises[0].updateSet(1);
         test.printWorkout();
         WorkoutDatabaseAdapter adapter = new WorkoutDatabaseAdapter(this);
+        adapter.open();
         adapter.insertWorkout(test);
+        System.out.println("first item in db: " + adapter.getWorkouts()[0]);
+        adapter.getWorkout(adapter.getWorkouts()[0]).printWorkout();
+        adapter.close();
+        System.out.println("Adapter closed");
     }
 
 

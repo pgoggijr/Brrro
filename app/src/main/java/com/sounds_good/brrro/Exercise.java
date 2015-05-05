@@ -60,6 +60,10 @@ public class Exercise {
         return sets;
     }
 
+    public int getReps() {
+        return reps;
+    }
+
     public int getType() {
         return type;
     }
