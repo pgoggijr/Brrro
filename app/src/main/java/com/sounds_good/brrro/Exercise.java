@@ -77,16 +77,16 @@ public class Exercise {
         weight = newWeight;
         return true;
     }
-    public boolean updateSet(int index) {
-        if(index < 0 || index > sets.length) {
-            return false;
+    public int updateSet(int index) {
+        if(index < 0 || index >= sets.length) {
+            return 0;
         }
         if(sets[index] == 0) {
             sets[index] = reps;
         } else {
             sets[index] = sets[index] - 1;
         }
-        return true;
+        return sets[index];
     }
     public boolean updateSet(int index, int value) {
         if(index < 0

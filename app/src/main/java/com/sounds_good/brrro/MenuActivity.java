@@ -37,6 +37,7 @@ public class MenuActivity extends AppCompatActivity {
         exercises[0].updateSet(0);
         exercises[0].updateSet(0);
         exercises[0].updateSet(1);
+        exercises[4].updateSet(2);
         test.printWorkout();
         WorkoutDatabaseAdapter adapter = new WorkoutDatabaseAdapter(this);
         adapter.open();
