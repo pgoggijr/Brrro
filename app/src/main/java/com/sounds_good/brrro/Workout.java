@@ -91,7 +91,8 @@ public class Workout {
     }
 
     public void printWorkout() {
-        System.out.println(date);
+        System.out.println("Date: " + date);
+        System.out.println("Type: " + type);
         for(Exercise exercise : exercises) {
             exercise.printExercise();
         }

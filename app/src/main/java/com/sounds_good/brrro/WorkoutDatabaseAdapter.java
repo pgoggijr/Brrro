@@ -60,7 +60,7 @@ public class WorkoutDatabaseAdapter {
             exercises[i] = getExercise(id, exerciseTypes[i]);
         }
 
-        return new Workout(id,date,exercises);
+        return new Workout(workoutType,date,exercises);
     }
 
     private Exercise getExercise(int workoutID, int exerciseType) {

@@ -2,6 +2,7 @@ package com.sounds_good.brrro;
 
 /**
  * Created by pgoggijr on 4/22/15.
+ * class to describe a single exercise
  */
 public class Exercise {
     private int[] sets;
