@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by pgoggijr on 5/3/15.
+ * Helper for creating database
  */
 public class WorkoutDatabaseHelper extends SQLiteOpenHelper {
 
