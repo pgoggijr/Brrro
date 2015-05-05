@@ -100,6 +100,9 @@ public class Exercise {
     }
 
     public void printExercise() {
+        System.out.println("Exercise Type: " + type +
+                ", Exercise weight: " + weight + ", " +
+                "Exercise max reps: " + reps);
         System.out.print("[");
         for(int i = 0; i < sets.length; i++) {
             System.out.print(sets[i]);

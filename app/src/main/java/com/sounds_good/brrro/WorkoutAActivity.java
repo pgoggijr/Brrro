@@ -2,6 +2,7 @@ package com.sounds_good.brrro;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.*;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText;
+import android.view.View;
 
 public class WorkoutAActivity extends ActionBarActivity {
 
@@ -37,6 +39,40 @@ public class WorkoutAActivity extends ActionBarActivity {
         initViews();
     }
 
+    public void updateSet(View view) {
+        int id = view.getId();
+        String idName = getResources().getResourceEntryName(id);
+        if(idName.matches("button_([A-z])*_[1-5]")) {
+            String[] idArr;
+            idArr = idName.split("_");
+            int index;
+            int set = Integer.parseInt(idArr[2]);
+
+            /* Switching isn't working on a string, despite compiling w/ java 6 */
+            if(idArr[1].compareTo("squats") == 0) {
+                index = 0;
+            } else if(idArr[1].compareTo("bench") == 0) {
+                index = 1;
+            } else if(idArr[1].compareTo("row") == 0) {
+                index = 2;
+            } else if(idArr[1].compareTo("shrugs") == 0) {
+                index = 3;
+            } else if(idArr[1].compareTo("tricep") == 0) {
+                index = 4;
+            } else if(idArr[1].compareTo("inline") == 0) {
+                index = 5;
+            } else if(idArr[1].compareTo("hyperextensions") == 0) {
+                index = 6;
+            } else if(idArr[1].compareTo("crunches") == 0) {
+                index = 7;
+            } else {
+                return;
+            }
+
+            ((Button) view).setText(String.valueOf(exercises[index].updateSet(set - 1)));
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -53,6 +89,7 @@ public class WorkoutAActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            workout.printWorkout();
             return true;
         }
 

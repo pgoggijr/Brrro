@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Squats"
-                android:id="@+id/text_squat" />
+                android:id="@+id/text_squats" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -50,31 +50,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_squats_1" />
+                android:id="@+id/button_squats_1"
+                android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_squats_2" />
+                android:id="@+id/button_squats_2"
+                android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_squats_3" />
+                android:id="@+id/button_squats_3"
+                android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_squats_4" />
+                android:id="@+id/button_squats_4"
+                android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_squats_5" />
+                android:id="@+id/button_squats_5"
+                android:onClick="updateSet" />
         </LinearLayout>
     </LinearLayout>
 
@@ -113,31 +118,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_bench_1" />
+                android:id="@+id/button_bench_1"
+                android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_bench_2" />
+                android:id="@+id/button_bench_2"
+                android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_bench_3" />
+                android:id="@+id/button_bench_3"
+                android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_bench_4" />
+                android:id="@+id/button_bench_4"
+                android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_bench_5" />
+                android:id="@+id/button_bench_5"
+                android:onClick="updateSet" />
         </LinearLayout>
     </LinearLayout>
 
@@ -176,35 +186,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_row_1" />
+                android:id="@+id/button_row_1"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_row_2" />
+                android:id="@+id/button_row_2"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_row_3" />
+                android:id="@+id/button_row_3"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_row_4" />
+                android:id="@+id/button_row_4"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_row_5" />
+                android:id="@+id/button_row_5"
+                android:onClick="updateSet" />
         </LinearLayout>
     </LinearLayout>
 
@@ -243,21 +258,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_shrugs_1" />
+                android:id="@+id/button_shrugs_1"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_shrugs_2" />
+                android:id="@+id/button_shrugs_2"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_shrugs_3" />
+                android:id="@+id/button_shrugs_3"
+                android:onClick="updateSet" />
 
         </LinearLayout>
     </LinearLayout>
@@ -297,21 +315,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_tricep_1" />
+                android:id="@+id/button_tricep_1"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_tricep_2" />
+                android:id="@+id/button_tricep_2"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_tricep_3" />
+                android:id="@+id/button_tricep_3"
+                android:onClick="updateSet" />
         </LinearLayout>
     </LinearLayout>
 
@@ -350,21 +371,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_inline_1" />
+                android:id="@+id/button_inline_1"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_inline_2" />
+                android:id="@+id/button_inline_2"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_inline_3" />
+                android:id="@+id/button_inline_3"
+                android:onClick="updateSet" />
         </LinearLayout>
     </LinearLayout>
 
@@ -403,14 +427,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_hyperextensions_1" />
+                android:id="@+id/button_hyperextensions_1"
+                android:onClick="updateSet" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_hyperextensions_2" />
+                android:id="@+id/button_hyperextensions_2"
+                android:onClick="updateSet" />
 
         </LinearLayout>
     </LinearLayout>
@@ -450,21 +476,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
-                    android:id="@+id/button_crunches_1" />
+                    android:id="@+id/button_crunches_1"
+                    android:onClick="updateSet" />
 
                 <Button
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
-                    android:id="@+id/button_crunches_2" />
+                    android:id="@+id/button_crunches_2"
+                    android:onClick="updateSet" />
 
                 <Button
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
-                    android:id="@+id/button_crunches_3" />
+                    android:id="@+id/button_crunches_3"
+                    android:onClick="updateSet" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
