@@ -3,35 +3,38 @@ package com.sounds_good.brrro;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.widget.Button;
 
-public class WorkoutActivity extends AppCompatActivity {
-    Workout workout;
+public class WorkoutAActivity extends ActionBarActivity {
+
+    private Workout workout;
+    private String date;
+    private WorkoutDatabaseAdapter dbAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMDD");
-
-
         super.onCreate(savedInstanceState);
-        int type;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        dbAdapter = new WorkoutDatabaseAdapter(this);
         Intent intent = getIntent();
-        type = intent.getIntExtra("type",0);
-        workout = new Workout(type,format.format(new Date()));
-        workout.printWorkout();
+        date = intent.getStringExtra("date");
+        if(date == null) {
+            date = sdf.format(new Date());
+        }
+        workout = dbAdapter.getWorkout(date,0);
 
-        setContentView(R.layout.activity_workout);
+        setContentView(R.layout.activity_workout_a);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_workout, menu);
+        getMenuInflater().inflate(R.menu.menu_workout_a, menu);
         return true;
     }
 

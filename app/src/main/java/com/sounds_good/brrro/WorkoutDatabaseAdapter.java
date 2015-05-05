@@ -35,7 +35,7 @@ public class WorkoutDatabaseAdapter {
         dbHelper.close();
     }
 
-    public Workout getWorkout(String date) {
+    public Workout getWorkout(String date, int type) {
         Workout toReturn;
         int id;
         int workoutType;
@@ -44,7 +44,7 @@ public class WorkoutDatabaseAdapter {
         Cursor cursor = database.query(WorkoutDatabaseHelper.TABLE_WORKOUTS, WorkoutsColumns,
                 WorkoutDatabaseHelper.COLUMN_DATE + " = " + date,null,null,null,null);
         if(cursor.getCount() < 1) {
-            return null;
+            return new Workout(type, date);
         }
         cursor.moveToNext();
         id = cursor.getInt(0);
