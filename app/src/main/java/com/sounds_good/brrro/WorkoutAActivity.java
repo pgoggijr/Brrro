@@ -26,7 +26,10 @@ public class WorkoutAActivity extends ActionBarActivity {
         if(date == null) {
             date = sdf.format(new Date());
         }
-        workout = dbAdapter.getWorkout(date,0);
+        System.out.println("date (workout activity): " + date);
+        dbAdapter.open();
+        workout = dbAdapter.getWorkout(date,Workout.WORKOUT_A);
+        dbAdapter.close();
 
         setContentView(R.layout.activity_workout_a);
     }
@@ -51,5 +54,9 @@ public class WorkoutAActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void mapButtons() {
+
     }
 }

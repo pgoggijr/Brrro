@@ -31,8 +31,8 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-        Workout test = new Workout(0,"20150501");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        Workout test = new Workout(0,sdf.format(new Date()));
         Exercise[] exercises = test.getExercises();
         exercises[0].updateSet(0);
         exercises[0].updateSet(0);
@@ -45,6 +45,7 @@ public class MenuActivity extends AppCompatActivity {
         //adapter.getWorkout(adapter.getWorkouts()[0]).printWorkout();
         adapter.close();
         System.out.println("Adapter closed");
+        setContentView(R.layout.activity_menu);
     }
 
 

@@ -36,7 +36,6 @@ public class WorkoutDatabaseAdapter {
     }
 
     public Workout getWorkout(String date, int type) {
-        Workout toReturn;
         int id;
         int workoutType;
         Exercise[] exercises;
