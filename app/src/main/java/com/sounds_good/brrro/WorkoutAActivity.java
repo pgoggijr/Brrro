@@ -1,17 +1,16 @@
 package com.sounds_good.brrro;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.regex.*;
-
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.view.View;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class WorkoutAActivity extends ActionBarActivity {
 
@@ -48,7 +47,8 @@ public class WorkoutAActivity extends ActionBarActivity {
             int index;
             int set = Integer.parseInt(idArr[2]);
 
-            /* Switching isn't working on a string, despite compiling w/ java 6 */
+            /* Switching isn't working on a string, despite compiling w/ java 7
+                Thanks java, for this disgusting if else block */
             if(idArr[1].compareTo("squats") == 0) {
                 index = 0;
             } else if(idArr[1].compareTo("bench") == 0) {
@@ -90,10 +90,20 @@ public class WorkoutAActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             workout.printWorkout();
+            dbAdapter.open();
+            System.out.println(dbAdapter.getWorkoutId(workout.getDate()));
+            dbAdapter.close();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void updateWorkout(View view) {
+        dbAdapter.open();
+        dbAdapter.updateWorkout(workout);
+        dbAdapter.getWorkout(workout.getDate(), 0).printWorkout();
+        dbAdapter.close();
     }
 
     public void initViews() {

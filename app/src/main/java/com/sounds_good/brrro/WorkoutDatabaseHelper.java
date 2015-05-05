@@ -29,7 +29,7 @@ public class WorkoutDatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_WORKOUTS = "CREATE TABLE "
             + TABLE_WORKOUTS + "(" + COLUMN_ID
             + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_DATE + " VARCHAR(8), "
+            + COLUMN_DATE + " VARCHAR(8) UNIQUE, "
             + COLUMN_TYPE + " INTEGER);";
 
     private static final String CREATE_SETS = "CREATE TABLE "

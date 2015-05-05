@@ -10,12 +10,20 @@
     android:longClickable="false"
     android:clickable="false"
     android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <LinearLayout
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOG WORKOut"
+            android:id="@+id/button_log"
+            android:onClick="updateWorkout" />
+
+        <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -83,7 +91,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+        <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -496,5 +504,6 @@
                     android:onClick="updateSet" />
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

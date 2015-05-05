@@ -1,13 +1,12 @@
 package com.sounds_good.brrro;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.content.ContentValues;
-import android.database.Cursor;
+
+import java.text.SimpleDateFormat;
 
 /**
  * Created by Peter on 5/4/2015.
@@ -100,6 +99,78 @@ public class WorkoutDatabaseAdapter {
         cursor.close();
         return workoutDates;
     }
+
+    public boolean updateWorkout(Workout workout) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+        ContentValues workoutValues = new ContentValues();
+        database = dbHelper.getWritableDatabase();
+        Exercise[] exercises = workout.getExercises();
+        int affected;
+        long workoutId;
+
+        workoutId = getWorkoutId(workout.getDate());
+
+        //put in and insert workout Values
+        workoutValues.put(WorkoutDatabaseHelper.COLUMN_DATE,workout.getDate());
+        workoutValues.put(WorkoutDatabaseHelper.COLUMN_TYPE,workout.getType());
+
+        try {
+            affected = database.update(WorkoutDatabaseHelper.TABLE_WORKOUTS,
+                    workoutValues,
+                    WorkoutDatabaseHelper.COLUMN_ID + " = ? ", new String[]{String.valueOf(workoutId)});
+
+        } catch(SQLException e) {
+            System.out.println("Inserting workout failed: ");
+            System.out.println(e);
+            return false;
+        }
+
+        //insert exercise values
+        for (Exercise curr : exercises) {
+            int[] currSets = curr.getSets();
+            int currWeight = curr.getWeight();
+            int currType = curr.getType();
+            int currReps = curr.getReps();
+            for (int j = 0; j < currSets.length; j++) {
+                ContentValues setValues = new ContentValues();
+
+                setValues.put(WorkoutDatabaseHelper.COLUMN_REPS, currSets[j]);
+                setValues.put(WorkoutDatabaseHelper.COLUMN_WEIGHT, currWeight);
+
+                try{
+                    database.update(WorkoutDatabaseHelper.TABLE_SETS, setValues,
+                            dbHelper.COLUMN_WORKOUT + " = ? AND " +
+                                    dbHelper.COLUMN_TYPE + " = ? AND " +
+                                    dbHelper.COLUMN_NUMBER + " = ?"
+                            ,
+                            new String[]{String.valueOf(workoutId), String.valueOf(curr.getType()),
+                                    String.valueOf(j)});
+                } catch(SQLException e) {
+                    System.out.println("Updating reps failed: ");
+                    System.out.println(e);
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public long getWorkoutId(String date) {
+        Cursor cursor;
+        try {
+            cursor = database.query(WorkoutDatabaseHelper.TABLE_WORKOUTS, new String[]{"_id"},
+                    WorkoutDatabaseHelper.COLUMN_DATE + " = " + date, null, null, null, null);
+        } catch (SQLException e) {
+            System.out.println(e);
+            cursor = null;
+        }
+        if (cursor == null || cursor.getCount() < 1) {
+            return -1;
+        }
+        cursor.moveToNext();
+        return cursor.getLong(0);
+    }
+
     public boolean insertWorkout(Workout workout) {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         ContentValues workoutValues = new ContentValues();
@@ -108,14 +179,14 @@ public class WorkoutDatabaseAdapter {
         long workoutId;
 
         //put in and insert workout Values
-        workoutValues.put(WorkoutDatabaseHelper.COLUMN_DATE,workout.getDate());
-        workoutValues.put(WorkoutDatabaseHelper.COLUMN_TYPE,workout.getType());
+        workoutValues.put(WorkoutDatabaseHelper.COLUMN_DATE, workout.getDate());
+        workoutValues.put(WorkoutDatabaseHelper.COLUMN_TYPE, workout.getType());
 
         try {
             workoutId = database.insert(WorkoutDatabaseHelper.TABLE_WORKOUTS,
                     WorkoutDatabaseHelper.COLUMN_TYPE,
                     workoutValues);
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println("Inserting workout failed: ");
             System.out.println(e);
             return false;
@@ -137,11 +208,11 @@ public class WorkoutDatabaseAdapter {
                 setValues.put(WorkoutDatabaseHelper.COLUMN_TYPE, currType);
                 setValues.put(WorkoutDatabaseHelper.COLUMN_MAX, currReps);
 
-                try{
+                try {
                     database.insert(WorkoutDatabaseHelper.TABLE_SETS,
                             WorkoutDatabaseHelper.COLUMN_WORKOUT,
                             setValues);
-                } catch(SQLException e) {
+                } catch (SQLException e) {
                     System.out.println("Inserting reps failed: ");
                     System.out.println(e);
                     return false;
