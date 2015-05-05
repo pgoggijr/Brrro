@@ -17,7 +17,6 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void logWorkout(View view) {
-        System.out.println("logging workout");
         Intent intent = new Intent(MenuActivity.this, WorkoutActivity.class);
         MenuActivity.this.startActivity(intent);
     }
@@ -26,6 +25,19 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        Workout test = new Workout(0,"20150501");
+        Exercise[] exercises = test.getExercises();
+        exercises[0].updateSet(0);
+        exercises[0].updateSet(0);
+        exercises[0].updateSet(1);
+        test.printWorkout();
+        WorkoutDatabaseAdapter adapter = new WorkoutDatabaseAdapter(this);
+        adapter.open();
+        adapter.insertWorkout(test);
+        System.out.println("first item in db: " + adapter.getWorkouts()[0]);
+        adapter.getWorkout(adapter.getWorkouts()[0]).printWorkout();
+        adapter.close();
+        System.out.println("Adapter closed");
     }
 
 

@@ -36,7 +36,6 @@ public class Exercise {
         if (repCount <= 0) {
             repCount = 1;
         }
-
         /* verify set array is valid */
         if(setArr.length != setCount) {
             valid = false;
@@ -46,14 +45,12 @@ public class Exercise {
                 valid = false;
             }
         }
-
         /* use given sets if valid, default if invalid */
         if(valid) {
             sets = setArr;
         } else {
             sets = new int[repCount];
         }
-
         type = exerciseType;
         reps = repCount;
         weight = xWeight;
@@ -61,6 +58,10 @@ public class Exercise {
 
     public int[] getSets() {
         return sets;
+    }
+
+    public int getReps() {
+        return reps;
     }
 
     public int getType() {
@@ -75,7 +76,6 @@ public class Exercise {
         weight = newWeight;
         return true;
     }
-
     public boolean updateSet(int index) {
         if(index < 0 || index > sets.length) {
             return false;
@@ -87,7 +87,6 @@ public class Exercise {
         }
         return true;
     }
-
     public boolean updateSet(int index, int value) {
         if(index < 0
                 || index > sets.length

@@ -7,4 +7,5 @@
     <string name="workout_history_button">Check History</string>
     <string name="title_activity_history">HistoryActivity</string>
     <string name="title_activity_workout">WorkoutActivity</string>
+    <string name="squats">Squats</string>
 </resources>
