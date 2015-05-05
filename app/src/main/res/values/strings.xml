@@ -8,4 +8,20 @@
     <string name="title_activity_history">HistoryActivity</string>
     <string name="title_activity_workout">WorkoutActivity</string>
     <string name="squats">Squats</string>
+    <string name="title_activity_workout_a">WorkoutAActivity</string>
+    <string name="workout_for">Workout for: </string>
+
+    <string name="squat">Squat</string>
+    <string name="overhead_press">Overhead Press</string>
+    <string name="bench_press">Squat</string>
+    <string name="bent_over_row">Bent Over Row</string>
+    <string name="barbell_shrugs">Barbell Shrugs</string>
+    <string name="tricep_extensions">Tricep Extensions</string>
+    <string name="incline_curls">Incline Curls</string>
+    <string name="hyperextensions">Hyperextensions</string>
+    <string name="cable_crunches">Cable Crunches</string>
+    <string name="deadlift">Deadlift</string>
+    <string name="standing_press">Standing Press</string>
+    <string name="close_grip_bench_press">Close Grip Bench Press</string>
+
 </resources>

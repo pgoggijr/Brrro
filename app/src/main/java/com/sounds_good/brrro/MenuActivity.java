@@ -7,37 +7,46 @@ import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class MenuActivity extends AppCompatActivity {
 
     public void checkHistory(View view) {
         System.out.println("checking history");
         Intent intent = new Intent(MenuActivity.this, HistoryActivity.class);
+        intent.putExtra("type",1);
         MenuActivity.this.startActivity(intent);
     }
 
     public void logWorkout(View view) {
-        Intent intent = new Intent(MenuActivity.this, WorkoutActivity.class);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        Intent intent = new Intent(MenuActivity.this, WorkoutAActivity.class);
+        System.out.println(sdf.format(new Date()));
+        intent.putExtra("date",sdf.format(new Date()));
         MenuActivity.this.startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-        Workout test = new Workout(0,"20150501");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        Workout test = new Workout(0,sdf.format(new Date()));
         Exercise[] exercises = test.getExercises();
         exercises[0].updateSet(0);
         exercises[0].updateSet(0);
         exercises[0].updateSet(1);
+        exercises[4].updateSet(2);
         test.printWorkout();
         WorkoutDatabaseAdapter adapter = new WorkoutDatabaseAdapter(this);
         adapter.open();
         adapter.insertWorkout(test);
         System.out.println("first item in db: " + adapter.getWorkouts()[0]);
-        adapter.getWorkout(adapter.getWorkouts()[0]).printWorkout();
+        //adapter.getWorkout(adapter.getWorkouts()[0]).printWorkout();
         adapter.close();
         System.out.println("Adapter closed");
+        setContentView(R.layout.activity_menu);
     }
 
 
