@@ -76,16 +76,11 @@ public class Workout {
     public Exercise[] getExercises() {
         return exercises;
     }
-    public int getTotalSets() {
-        int total = 0;
-        for (Exercise exercise : exercises) {
-            total = total + exercise.getSets().length;
-        }
-        return total;
-    }
+
     public int getType() {
         return type;
     }
+
     public String getDate() {
         return date;
     }

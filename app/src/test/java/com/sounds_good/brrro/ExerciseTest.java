@@ -13,8 +13,10 @@ import static org.junit.Assert.*;
 public class ExerciseTest extends TestCase {
 
     private ExerciseFactory $;
-    private Exercise exercise1;
-    private Exercise exercise2;
+    private Exercise testExercise;
+    private Exercise testExercise1;
+    private Exercise testExercise2;
+    private Exercise testExercise3;
 
     public ExerciseTest() {
         super("Exercise Test");
@@ -23,61 +25,72 @@ public class ExerciseTest extends TestCase {
     @Before
     public void setUp() throws Exception {
         this.$ = new ExerciseFactory();
-        this.exercise1 = $.createExercise(ExerciseFactory.SQUAT,45);
-        this.exercise2 = $.createExercise(ExerciseFactory.BARBELL_SHRUGS,12);
+        this.testExercise = $.createExercise(ExerciseFactory.SQUAT,45);
+        this.testExercise1 = $.createExercise(ExerciseFactory.SQUAT,45);
+        this.testExercise2 = $.createExercise(ExerciseFactory.HYPEREXTENSIONS,45);
+        this.testExercise3 = $.createExercise(ExerciseFactory.HYPEREXTENSIONS,45);
+
     }
 
     @Test
     public void testGetSets() throws Exception {
-        assertArrayEquals("exercise1.getSets Must be  5 long array of 0's",
-                new int[5], exercise1.getSets());
-        assertArrayEquals("exercise2.getSets Must be  3 long array of 0's",
-                new int[3], exercise2.getSets());
+        assertArrayEquals("testExercise.getSets Must be  5 long array of 0's",
+                new int[5], testExercise.getSets());
     }
 
     @Test
     public void testGetReps() throws Exception {
-        assertEquals("exercise1.getReps must be 5", 5, this.exercise1.getReps());
-        assertEquals("exercise2.getReps must be 8", 8, this.exercise2.getReps());
+        assertEquals("testExercise.getReps must be 5", 5, this.testExercise.getReps());
     }
 
     @Test
     public void testGetType() throws Exception {
-        assertEquals("exercise1.getTypes must be" + ExerciseFactory.SQUAT,
-                ExerciseFactory.SQUAT, this.exercise1.getType());
-        assertEquals("exercise2.getTypes must be" + ExerciseFactory.BARBELL_SHRUGS,
-                ExerciseFactory.SQUAT, this.exercise1.getType());
+        assertEquals("testExercise.getTypes must be" + ExerciseFactory.SQUAT,
+                ExerciseFactory.SQUAT, this.testExercise.getType());
     }
 
     @Test
     public void testGetWeight() throws Exception {
-        assertEquals("exercise1.getWeight must be 45", 45, this.exercise1.getWeight());
-        assertEquals("exercise2.getWeight must be 45", 12, this.exercise2.getWeight());
+        assertEquals("testExercise.getWeight must be 45", 45, this.testExercise.getWeight());
 
     }
 
     @Test
     public void testSetWeight() throws Exception {
-        assertEquals("exercise1.setWeight must be true", true, this.exercise1.setWeight(50));
-        assertEquals("exercise1.getWeight must be 50", 50, this.exercise1.getWeight());
-        assertEquals("exercise1.setWeight must be false", false, this.exercise1.setWeight(-1));
+        assertEquals("testExercise.setWeight must be true", true, this.testExercise.setWeight(50));
+        assertEquals("testExercise.getWeight must be 50", 50, this.testExercise.getWeight());
+        assertEquals("testExercise.setWeight must be false", false, this.testExercise.setWeight(-1));
     }
 
     @Test
     public void testUpdateSet() throws Exception {
-        assertEquals("exercise1.updateSet must be 5", 5, this.exercise1.updateSet(0));
-        assertEquals("exercise1.updateSet must be -1", -1, this.exercise1.updateSet(5));
-        assertEquals("exercise1.updateSet must be -1", -1, this.exercise1.updateSet(-1));
-        assertEquals("exercise1's first set must be 5", 5, this.exercise1.getSets()[0]);
-        assertEquals("exercise1.updateSet must be 4", 4, this.exercise1.updateSet(0));
-        assertEquals("exercise1's first set must be 4", 4, this.exercise1.getSets()[0]);
+        assertEquals("testExercise.updateSet must be 5", 5, this.testExercise.updateSet(0));
+        assertEquals("testExercise.updateSet must be -1", -1, this.testExercise.updateSet(5));
+        assertEquals("testExercise.updateSet must be -1", -1, this.testExercise.updateSet(-1));
+        assertEquals("testExercise's first set must be 5", 5, this.testExercise.getSets()[0]);
+        assertEquals("testExercise.updateSet must be 4", 4, this.testExercise.updateSet(0));
+        assertEquals("testExercise's first set must be 4", 4, this.testExercise.getSets()[0]);
     }
 
     @Test
     public void testUpdateSet1() throws Exception {
-        assertEquals("exercise1.updateSet must be 5", 5, this.exercise1.updateSet(0,5));
-        assertEquals("exercise1.updateSet must be -1", -1, this.exercise1.updateSet(-1,5));
-        assertEquals("exercise1.updateSet must be 5", 5, this.exercise1.updateSet(0,5));
-        assertEquals("exercise1's first set must be 5", 5, this.exercise1.getSets()[0]);
+        assertEquals("testExercise.updateSet must be 5", 5, this.testExercise.updateSet(0, 5));
+        assertEquals("testExercise.updateSet must be -1", -1, this.testExercise.updateSet(-1, 5));
+        assertEquals("testExercise.updateSet must be 5", 5, this.testExercise.updateSet(0, 5));
+        assertEquals("testExercise's first set must be 5", 5, this.testExercise.getSets()[0]);
+    }
+
+    @Test
+    public void testEqualTo() throws Exception {
+        testExercise.updateSet(0);
+        assertEquals("testExercise.equalTo must be false", false,
+                this.testExercise.equalTo(this.testExercise1));
+        assertEquals("testExercise1.equalTo must be false", false,
+                this.testExercise1.equalTo(this.testExercise2));
+        assertEquals("testExercise2.equalTo must be true", true,
+                this.testExercise2.equalTo(this.testExercise3));
+        testExercise2.updateSet(0);
+        assertEquals("testExercise2.equalTo must be false", false,
+                this.testExercise2.equalTo(this.testExercise3));
     }
 }

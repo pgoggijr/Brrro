@@ -1,5 +1,7 @@
 package com.sounds_good.brrro;
 
+import java.util.Arrays;
+
 /**
  * Created by pgoggijr on 4/22/15.
  * class to describe a single exercise
@@ -99,6 +101,13 @@ public class Exercise {
             sets[index] = value;
         }
         return sets[index];
+    }
+
+    public boolean equalTo(Exercise exercise) {
+            return this.type == exercise.getType()
+                && this.weight == exercise.getWeight()
+                && this.reps == exercise.getReps()
+                && Arrays.equals(this.sets, exercise.getSets());
     }
 
     public void printExercise() {
