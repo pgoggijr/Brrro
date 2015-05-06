@@ -18,8 +18,8 @@ public class WorkoutActivity extends ActionBarActivity {
     private Exercise[] exercises;
     private String date;
     private WorkoutDatabaseAdapter dbAdapter;
-    private int type;
     private int[] weights;
+    private int type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +29,24 @@ public class WorkoutActivity extends ActionBarActivity {
         dbAdapter = new WorkoutDatabaseAdapter(this);
 
         date = intent.getStringExtra("date");
-        type = intent.getIntExtra("type", Workout.WORKOUT_A);
-        weights = intent.getIntArrayExtra("weights");
 
         if(date == null) {
             date = sdf.format(new Date());
         }
 
         dbAdapter.open();
-        workout = dbAdapter.getWorkout(date,Workout.WORKOUT_A);
-        exercises = workout.getExercises();
+        workout = dbAdapter.getWorkout(date);
+        if (workout == null) {
+            if (dbAdapter.getLastWorkoutType() == Workout.WORKOUT_A) {
+                workout = new Workout(Workout.WORKOUT_B, date);
+            } else {
+                workout = new Workout(Workout.WORKOUT_A, date);
+            }
+            dbAdapter.insertWorkout(workout);
+        }
         dbAdapter.close();
+        exercises = workout.getExercises();
+        type = workout.getType();
         if(type == Workout.WORKOUT_A) {
             setContentView(R.layout.activity_workout_a);
         } else {
@@ -118,7 +125,7 @@ public class WorkoutActivity extends ActionBarActivity {
     public void updateWorkout(View view) {
         dbAdapter.open();
         dbAdapter.updateWorkout(workout);
-        dbAdapter.getWorkout(workout.getDate(), 0).printWorkout();
+        dbAdapter.getWorkout(workout.getDate()).printWorkout();
         dbAdapter.close();
     }
 

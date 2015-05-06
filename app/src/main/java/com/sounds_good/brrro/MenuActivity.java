@@ -1,11 +1,12 @@
 package com.sounds_good.brrro;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.content.Intent;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,41 +14,46 @@ import java.util.Date;
 
 public class MenuActivity extends AppCompatActivity {
 
+    SharedPreferences prefs = null;
+
     public void checkHistory(View view) {
         System.out.println("checking history");
         Intent intent = new Intent(MenuActivity.this, HistoryActivity.class);
-        intent.putExtra("type",1);
         MenuActivity.this.startActivity(intent);
     }
 
     public void logWorkout(View view) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         Intent intent = new Intent(MenuActivity.this, WorkoutActivity.class);
-        System.out.println(sdf.format(new Date()));
         intent.putExtra("date",sdf.format(new Date()));
-        intent.putExtra("type",Workout.WORKOUT_B);
         MenuActivity.this.startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        Workout test = new Workout(1,sdf.format(new Date()));
-        Exercise[] exercises = test.getExercises();
-        exercises[0].updateSet(0);
-        exercises[0].updateSet(0);
-        exercises[0].updateSet(1);
-        exercises[4].updateSet(2);
-        test.printWorkout();
-        WorkoutDatabaseAdapter adapter = new WorkoutDatabaseAdapter(this);
-        adapter.open();
-        adapter.insertWorkout(test);
-        System.out.println("first item in db: " + adapter.getWorkouts()[0]);
-        //adapter.getWorkout(adapter.getWorkouts()[0]).printWorkout();
-        adapter.close();
-        System.out.println("Adapter closed");
+        prefs = getSharedPreferences("com.sounds_good.brrro", MODE_PRIVATE);
         setContentView(R.layout.activity_menu);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (prefs.getBoolean("firstRun", true)) {
+            //insert dummy workouts
+            Workout workoutDummy1 = new Workout(Workout.WORKOUT_A, "20150429");
+            Workout workoutDummy2 = new Workout(Workout.WORKOUT_B, "20150501");
+            Workout workoutDummy3 = new Workout(Workout.WORKOUT_A, "20150503");
+            WorkoutDatabaseAdapter dbAdapter = new WorkoutDatabaseAdapter(this);
+            dbAdapter.open();
+            dbAdapter.insertWorkout(workoutDummy1);
+            dbAdapter.insertWorkout(workoutDummy2);
+            dbAdapter.insertWorkout(workoutDummy3);
+            dbAdapter.close();
+
+            prefs.edit().putBoolean("firstRun", false).commit();
+        }
     }
 
 

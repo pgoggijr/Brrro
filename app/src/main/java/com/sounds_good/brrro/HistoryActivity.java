@@ -1,11 +1,15 @@
 package com.sounds_good.brrro;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 public class HistoryActivity extends AppCompatActivity {
@@ -23,6 +27,16 @@ public class HistoryActivity extends AppCompatActivity {
         dbAdapter.close();
         
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dates);
+
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(HistoryActivity.this, WorkoutActivity.class);
+                intent.putExtra("date", ((TextView) view).getText());
+                intent.putExtra("fromHistory", true);
+                HistoryActivity.this.startActivity(intent);
+            }
+        });
 
         listView1.setAdapter(adapter);
     }

@@ -34,7 +34,18 @@ public class WorkoutDatabaseAdapter {
         dbHelper.close();
     }
 
-    public Workout getWorkout(String date, int type) {
+    public int getLastWorkoutType() {
+        int type = 0;
+        Cursor cursor = database.query(WorkoutDatabaseHelper.TABLE_WORKOUTS,
+                new String[]{WorkoutDatabaseHelper.COLUMN_TYPE},
+                null, null, null, null, WorkoutDatabaseHelper.COLUMN_DATE + " DESC", "1");
+        while (cursor.moveToNext()) {
+            type = cursor.getInt(0);
+        }
+        return type;
+    }
+
+    public Workout getWorkout(String date) {
         int id;
         int workoutType;
         Exercise[] exercises;
@@ -42,7 +53,7 @@ public class WorkoutDatabaseAdapter {
         Cursor cursor = database.query(WorkoutDatabaseHelper.TABLE_WORKOUTS, WorkoutsColumns,
                 WorkoutDatabaseHelper.COLUMN_DATE + " = " + date,null,null,null,null);
         if(cursor.getCount() < 1) {
-            return new Workout(type, date);
+            return null;
         }
         cursor.moveToNext();
         id = cursor.getInt(0);

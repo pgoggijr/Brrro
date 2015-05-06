@@ -358,15 +358,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Inline Curls"
-                android:id="@+id/text_inline" />
+                android:text="Incline Curls"
+                android:id="@+id/text_incline" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/edit_inline" />
+                android:id="@+id/edit_incline" />
         </LinearLayout>
 
         <LinearLayout
@@ -379,7 +379,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_inline_1"
+                android:id="@+id/button_incline_1"
                 android:onClick="updateSet" />
 
             <Button
@@ -387,7 +387,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_inline_2"
+                android:id="@+id/button_incline_2"
                 android:onClick="updateSet" />
 
             <Button
@@ -395,7 +395,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:id="@+id/button_inline_3"
+                android:id="@+id/button_incline_3"
                 android:onClick="updateSet" />
         </LinearLayout>
     </LinearLayout>
