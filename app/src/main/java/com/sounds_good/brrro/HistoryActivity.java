@@ -4,14 +4,27 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 public class HistoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        WorkoutDatabaseAdapter dbAdapter = new WorkoutDatabaseAdapter(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+
+        ListView listView1 = (ListView) findViewById(R.id.listView1);
+        dbAdapter.open();
+        String[] dates = dbAdapter.getWorkouts();
+        dbAdapter.close();
+        
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dates);
+
+        listView1.setAdapter(adapter);
     }
 
 
