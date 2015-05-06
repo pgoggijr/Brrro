@@ -11,20 +11,20 @@ public class Exercise {
     private int weight;
 
     /* Create exercise without a set array */
-    public Exercise(int setCount, int repCount, int xWeight, int exerciseType) {
-        if(setCount <= 0) {
-            setCount = 1;
+    public Exercise(int sets, int reps, int weight, int type) {
+        if(sets <= 0) {
+            sets = 1;
         }
-        if (repCount <= 0) {
-            repCount = 1;
+        if (reps <= 0) {
+            reps = 1;
         }
-        if (xWeight <= 0) {
-            xWeight = 10;
+        if (weight <= 0) {
+            weight = 10;
         }
-        sets = new int[setCount];
-        type = exerciseType;
-        reps = repCount;
-        weight = xWeight;
+        this.sets = new int[sets];
+        this.type = type;
+        this.reps = reps;
+        this.weight = weight;
     }
 
     /* Create exercise with a set array */

@@ -10,6 +10,7 @@ import android.view.View;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 
 public class MenuActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void logWorkout(View view) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd", Locale.US);
         Intent intent = new Intent(MenuActivity.this, WorkoutActivity.class);
         intent.putExtra("date",sdf.format(new Date()));
         MenuActivity.this.startActivity(intent);
@@ -52,7 +53,7 @@ public class MenuActivity extends AppCompatActivity {
             dbAdapter.insertWorkout(workoutDummy3);
             dbAdapter.close();
 
-            prefs.edit().putBoolean("firstRun", false).commit();
+            prefs.edit().putBoolean("firstRun", false).apply();
         }
     }
 

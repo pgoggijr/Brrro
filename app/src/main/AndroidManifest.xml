@@ -19,7 +19,7 @@
         </activity>
         <activity
             android:name=".HistoryActivity"
-            android:label="@string/title_activity_history"
+            android:label="Workout History"
             android:parentActivityName=".MenuActivity"
             android:theme="@style/Theme.AppCompat">
             <meta-data
@@ -28,7 +28,7 @@
         </activity>
         <activity
             android:name=".WorkoutActivity"
-            android:label="@string/title_activity_workout_a"
+            android:label="Log a Workout"
             android:parentActivityName=".MenuActivity"
             android:theme="@style/Theme.AppCompat" >
             <meta-data
