@@ -73,13 +73,16 @@ public class Exercise {
         return weight;
     }
 
-    public boolean setWeight(int newWeight) {
-        weight = newWeight;
+    public boolean setWeight(int weight) {
+        if(weight <= 0) {
+            return false;
+        }
+        this.weight = weight;
         return true;
     }
     public int updateSet(int index) {
         if(index < 0 || index >= sets.length) {
-            return 0;
+            return -1;
         }
         if(sets[index] == 0) {
             sets[index] = reps;
@@ -88,15 +91,14 @@ public class Exercise {
         }
         return sets[index];
     }
-    public boolean updateSet(int index, int value) {
-        if(index < 0
-                || index > sets.length
-                || value < 0
-                || value > reps) {
-            return false;
+    public int updateSet(int index, int value) {
+        if(index < 0 || index > sets.length) {
+            return -1;
         }
-        sets[index] = value;
-        return true;
+        if(value >= 0 && value <= reps) {
+            sets[index] = value;
+        }
+        return sets[index];
     }
 
     public void printExercise() {
