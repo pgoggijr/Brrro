@@ -25,7 +25,7 @@ public class ExerciseFactoryTest {
 
     @Before
     public void setUp() throws Exception {
-        arr = {0,0,0,0,0};
+        arr = new int[] {0,0,0,0,0};
         testFactory = new ExerciseFactory();
         testExercise1 = new Exercise(5, 5, 45, ExerciseFactory.SQUAT);
         testExercise2 = new Exercise(3, 8, 45, ExerciseFactory.BARBELL_SHRUGS);
