@@ -1,0 +1,19 @@
+reinstall_apps
+query("textView id='Log Workout'")
+exit
+reinstall_apps
+query("textView id:'log_workout'")
+exit
+query("textView id:'log_workout'")
+reinstall_apps
+query("textView id:'log_workout'")
+adb stop
+exit
+reinstall_apps
+adb
+exit
+reinstall_apps
+exit
+reinstall_apps
+query("textView id:'log_workout'")
+exit
