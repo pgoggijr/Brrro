@@ -5,7 +5,11 @@ Feature: App Launch
 	Scenario: First Launch
 		Given I see "Log Workout"
 		Then I press "Log Workout"
+        Then I should see "Log Workout"
 
 	Scenario: Back Button
-		Given the user is at a workout page or the history page
-		When the back button is pressed
+	  Given I see "Check History"
+	  Given I see "Log Workout"
+	  Then I press "Log Workout"
+	  Then I go back
+	  Then I should see "Log Workout"
