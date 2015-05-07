@@ -1,3 +1,4 @@
+@appLaunch
 Feature: App Launch
 	In order to welcome the user
 	A menu should be displayed on first app launch
