@@ -85,3 +85,4 @@ crashlytics-build.properties
 
 //cuke screens
 cuke/*.png
+.irb_history
