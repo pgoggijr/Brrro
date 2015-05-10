@@ -49,7 +49,7 @@
                     android:labelFor="@+id/edit_squats" />
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
@@ -125,7 +125,7 @@
                     android:labelFor="@+id/edit_deadlift" />
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
@@ -174,7 +174,7 @@
                     android:labelFor="@+id/edit_standing" />
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
@@ -254,7 +254,7 @@
                     android:labelFor="@+id/edit_bent" />
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
@@ -315,7 +315,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="60dp" >
 
                 <TextView
                     android:layout_width="170dp"
@@ -333,7 +333,7 @@
                     android:labelFor="@+id/edit_close" />
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
@@ -397,7 +397,7 @@
                     android:labelFor="@+id/edit_incline" />
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
@@ -461,7 +461,7 @@
                     android:labelFor="@+id/edit_crunches" />
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
