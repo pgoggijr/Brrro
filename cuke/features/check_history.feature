@@ -8,7 +8,7 @@
       Then I press "Check History"
       Then I see the text "20150503"
       Then I press "20150503"
-      Then I see the text "Log Workout"
+      Then I see the text "Save Workout"
       Then I press view with id "button_squats_5"
       Then I see the text "5"
       Then I go back

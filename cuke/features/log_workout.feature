@@ -31,8 +31,6 @@ Feature: Log Workout
     And the view with id of "button_squats_5" should have the text "5"
     And the view with id of "button_deadlift_1" should have the text "5"
 
-
-
   @logWorkout2
   Scenario: Log a Squat rep so many times that it goes back to zero
     Given I see "Log Workout"

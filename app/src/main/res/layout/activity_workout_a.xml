@@ -19,7 +19,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LOG WORKOut"
+            android:text="@string/save"
             android:id="@+id/button_log"
             android:onClick="updateWorkout" />
 
@@ -34,14 +34,22 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/squats"
+                android:id="@+id/text_squats" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Squats"
-                android:id="@+id/text_squats" />
+                android:text="@string/weight_label"
+                android:id="@+id/text_weight_squats"
+                android:labelFor="@+id/edit_squats" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
@@ -57,35 +65,35 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_squats_1"
                 android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_squats_2"
                 android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_squats_3"
                 android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_squats_4"
                 android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_squats_5"
                 android:onClick="updateSet" />
         </LinearLayout>
@@ -102,11 +110,19 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/bench_press"
+                android:id="@+id/text_bench" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Bench Press"
-                android:id="@+id/text_bench" />
+                android:text="@string/weight_label"
+                android:id="@+id/text_weight_bench"
+                android:labelFor="@+id/edit_bench" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -125,35 +141,35 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_bench_1"
                 android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_bench_2"
                 android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_bench_3"
                 android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_bench_4"
                 android:onClick="updateSet" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_bench_5"
                 android:onClick="updateSet" />
         </LinearLayout>
@@ -166,15 +182,23 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/bent_over_row"
+                android:id="@+id/text_row" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Bent Over Row"
-                android:id="@+id/text_row" />
+                android:text="@string/weight_label"
+                android:id="@+id/text_weight_row"
+                android:labelFor="@+id/edit_row" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -193,7 +217,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_row_1"
                 android:onClick="updateSet" />
 
@@ -201,7 +225,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_row_2"
                 android:onClick="updateSet" />
 
@@ -209,7 +233,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_row_3"
                 android:onClick="updateSet" />
 
@@ -217,7 +241,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_row_4"
                 android:onClick="updateSet" />
 
@@ -225,7 +249,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_row_5"
                 android:onClick="updateSet" />
         </LinearLayout>
@@ -242,11 +266,19 @@
             android:layout_height="match_parent" >
 
             <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/barbell_shrugs"
+                android:id="@+id/text_shrugs" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Barbell Shrugs"
-                android:id="@+id/text_shrugs" />
+                android:text="@string/weight_label"
+                android:id="@+id/text_weight_shrugs"
+                android:labelFor="@+id/edit_shrugs" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -265,7 +297,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_shrugs_1"
                 android:onClick="updateSet" />
 
@@ -273,7 +305,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_shrugs_2"
                 android:onClick="updateSet" />
 
@@ -281,7 +313,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_shrugs_3"
                 android:onClick="updateSet" />
 
@@ -299,11 +331,19 @@
             android:layout_height="match_parent" >
 
             <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/tricep_extensions"
+                android:id="@+id/text_tricep" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Tricep Extensions"
-                android:id="@+id/tricep_extensions" />
+                android:text="@string/weight_label"
+                android:id="@+id/text_weight_tricep"
+                android:labelFor="@+id/edit_tricep" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -322,7 +362,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_tricep_1"
                 android:onClick="updateSet" />
 
@@ -330,7 +370,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_tricep_2"
                 android:onClick="updateSet" />
 
@@ -338,7 +378,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_tricep_3"
                 android:onClick="updateSet" />
         </LinearLayout>
@@ -355,11 +395,19 @@
             android:layout_height="match_parent" >
 
             <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/incline_curls"
+                android:id="@+id/text_incline" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Incline Curls"
-                android:id="@+id/text_incline" />
+                android:text="@string/weight_label"
+                android:id="@+id/text_weight_incline"
+                android:labelFor="@+id/edit_incline" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -378,7 +426,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_incline_1"
                 android:onClick="updateSet" />
 
@@ -386,7 +434,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_incline_2"
                 android:onClick="updateSet" />
 
@@ -394,7 +442,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_incline_3"
                 android:onClick="updateSet" />
         </LinearLayout>
@@ -411,11 +459,19 @@
             android:layout_height="match_parent" >
 
             <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/hyperextensions"
+                android:id="@+id/text_hyperextensions" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Hyperextensions"
-                android:id="@+id/text_hyperextensions" />
+                android:text="@string/weight_label"
+                android:id="@+id/text_weight_hyperextensions"
+                android:labelFor="@+id/edit_hyperextensions" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -434,7 +490,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_hyperextensions_1"
                 android:onClick="updateSet" />
 
@@ -442,7 +498,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_reps"
                 android:id="@+id/button_hyperextensions_2"
                 android:onClick="updateSet" />
 
@@ -460,11 +516,19 @@
                 android:layout_height="match_parent" >
 
                 <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/cable_crunches"
+                    android:id="@+id/text_crunches" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Cable Crunches"
-                    android:id="@+id/text_crunches" />
+                    android:text="@string/weight_label"
+                    android:id="@+id/text_weight_crunches"
+                    android:labelFor="@+id/edit_crunches" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -483,7 +547,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_crunches_1"
                     android:onClick="updateSet" />
 
@@ -491,7 +555,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_crunches_2"
                     android:onClick="updateSet" />
 
@@ -499,7 +563,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_crunches_3"
                     android:onClick="updateSet" />
             </LinearLayout>

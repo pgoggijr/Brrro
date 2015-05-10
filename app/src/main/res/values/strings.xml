@@ -7,13 +7,13 @@
     <string name="workout_history_button">Check History</string>
     <string name="title_activity_history">HistoryActivity</string>
     <string name="title_activity_workout">WorkoutActivity</string>
-    <string name="squats">Squats</string>
     <string name="title_activity_workout_a">WorkoutAActivity</string>
     <string name="workout_for">Workout for: </string>
 
-    <string name="squat">Squat</string>
+    <!-- Exercise names -->
+    <string name="squats">Squats</string>
     <string name="overhead_press">Overhead Press</string>
-    <string name="bench_press">Squat</string>
+    <string name="bench_press">Bench Press</string>
     <string name="bent_over_row">Bent Over Row</string>
     <string name="barbell_shrugs">Barbell Shrugs</string>
     <string name="tricep_extensions">Tricep Extensions</string>
@@ -23,5 +23,10 @@
     <string name="deadlift">Deadlift</string>
     <string name="standing_press">Standing Press</string>
     <string name="close_grip_bench_press">Close Grip Bench Press</string>
+    <string name="default_reps">0</string>
+
+    <!-- Text for Workout Activity -->
+    <string name="weight_label">Weight: </string>
+    <string name="save">Save Workout</string>
 
 </resources>

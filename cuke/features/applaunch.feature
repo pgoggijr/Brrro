@@ -6,7 +6,7 @@ Feature: App Launch
 	Scenario: First Launch
 		Given I see "Log Workout"
 		Then I press "Log Workout"
-        Then I should see "Log Workout"
+        Then I should see "Save Workout"
 
 	Scenario: Back Button
 	  Given I see "Check History"

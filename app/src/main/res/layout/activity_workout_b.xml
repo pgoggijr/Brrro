@@ -19,7 +19,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LOG WORKOut"
+            android:text="@string/save"
             android:id="@+id/button_log"
             android:onClick="updateWorkout" />
 
@@ -34,11 +34,19 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/squats"
+                    android:id="@+id/text_squats" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Squats"
-                    android:id="@+id/text_squats" />
+                    android:text="@string/weight_label"
+                    android:id="@+id/textView2"
+                    android:labelFor="@+id/edit_squats" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -57,35 +65,35 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_squats_1"
                     android:onClick="updateSet" />
                 <Button
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_squats_2"
                     android:onClick="updateSet" />
                 <Button
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_squats_3"
                     android:onClick="updateSet" />
                 <Button
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_squats_4"
                     android:onClick="updateSet" />
                 <Button
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_squats_5"
                     android:onClick="updateSet" />
             </LinearLayout>
@@ -102,11 +110,19 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/deadlift"
+                    android:id="@+id/text_deadlift" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Deadlift"
-                    android:id="@+id/text_deadlift" />
+                    android:text="@string/weight_label"
+                    android:id="@+id/text_weight_deadlift"
+                    android:labelFor="@+id/edit_deadlift" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -125,7 +141,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_deadlift_1"
                     android:onClick="updateSet" />
 
@@ -143,11 +159,19 @@
                 android:layout_height="match_parent" >
 
                 <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/standing_press"
+                    android:id="@+id/text_standing" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Standing Press"
-                    android:id="@+id/text_standing" />
+                    android:text="@string/weight_label"
+                    android:id="@+id/text_weight_standing"
+                    android:labelFor="@+id/edit_standing" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -166,7 +190,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_standing_1"
                     android:onClick="updateSet" />
 
@@ -174,7 +198,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_standing_2"
                     android:onClick="updateSet" />
 
@@ -182,7 +206,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_standing_3"
                     android:onClick="updateSet" />
 
@@ -190,7 +214,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_standing_4"
                     android:onClick="updateSet" />
 
@@ -198,7 +222,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_standing_5"
                     android:onClick="updateSet" />
             </LinearLayout>
@@ -215,11 +239,19 @@
                 android:layout_height="match_parent" >
 
                 <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/bent_over_row"
+                    android:id="@+id/text_bent" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Bent Over Row"
-                    android:id="@+id/text_bent" />
+                    android:text="@string/weight_label"
+                    android:id="@+id/text_weight_bent"
+                    android:labelFor="@+id/edit_bent" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -238,7 +270,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_bent_1"
                     android:onClick="updateSet" />
 
@@ -246,7 +278,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_bent_2"
                     android:onClick="updateSet" />
 
@@ -254,21 +286,21 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_bent_3"
                     android:onClick="updateSet" />
                 <Button
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_bent_4"
                     android:onClick="updateSet" />
                 <Button
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_bent_5"
                     android:onClick="updateSet" />
 
@@ -286,11 +318,19 @@
                 android:layout_height="match_parent" >
 
                 <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/close_grip_bench_press"
+                    android:id="@+id/text_close" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Close Grip Bench Press"
-                    android:id="@+id/text_close" />
+                    android:text="@string/weight_label"
+                    android:id="@+id/text_weight_close"
+                    android:labelFor="@+id/edit_close" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -309,7 +349,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_close_1"
                     android:onClick="updateSet" />
 
@@ -317,7 +357,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_close_2"
                     android:onClick="updateSet" />
 
@@ -325,7 +365,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_close_3"
                     android:onClick="updateSet" />
             </LinearLayout>
@@ -342,11 +382,19 @@
                 android:layout_height="match_parent" >
 
                 <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/incline_curls"
+                    android:id="@+id/text_incline" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Incline Curls"
-                    android:id="@+id/text_incline" />
+                    android:text="@string/weight_label"
+                    android:id="@+id/text_weight_incline"
+                    android:labelFor="@+id/edit_incline" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -365,7 +413,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_incline_1"
                     android:onClick="updateSet" />
 
@@ -373,7 +421,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_incline_2"
                     android:onClick="updateSet" />
 
@@ -381,7 +429,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_incline_3"
                     android:onClick="updateSet" />
             </LinearLayout>
@@ -398,11 +446,19 @@
                 android:layout_height="match_parent" >
 
                 <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/cable_crunches"
+                    android:id="@+id/text_crunches" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Cable Crunches"
-                    android:id="@+id/text_crunches" />
+                    android:text="@string/weight_label"
+                    android:id="@+id/text_weight_crunches"
+                    android:labelFor="@+id/edit_crunches" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -421,7 +477,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_crunches_1"
                     android:onClick="updateSet" />
 
@@ -429,7 +485,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_crunches_2"
                     android:onClick="updateSet" />
 
@@ -437,7 +493,7 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/default_reps"
                     android:id="@+id/button_crunches_3"
                     android:onClick="updateSet" />
             </LinearLayout>
