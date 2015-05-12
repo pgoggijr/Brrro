@@ -131,175 +131,125 @@ public class WorkoutActivity extends ActionBarActivity {
 
     public void initViews() {
 
-        Button button;
         int[] setArr;
 
         /* squats */
         setArr = exercises[0].getSets();
-        button = (Button) findViewById(R.id.button_squats_1);
-        button.setText(String.valueOf(setArr[0]));
-        button = (Button) findViewById(R.id.button_squats_2);
-        button.setText(String.valueOf(setArr[1]));
-        button = (Button) findViewById(R.id.button_squats_3);
-        button.setText(String.valueOf(setArr[2]));
-        button = (Button) findViewById(R.id.button_squats_4);
-        button.setText(String.valueOf(setArr[3]));
-        button = (Button) findViewById(R.id.button_squats_5);
-        button.setText(String.valueOf(setArr[4]));
+        ((Button) findViewById(R.id.button_squats_1)).setText(String.valueOf(setArr[0]));
+        ((Button) findViewById(R.id.button_squats_2)).setText(String.valueOf(setArr[1]));
+        ((Button) findViewById(R.id.button_squats_3)).setText(String.valueOf(setArr[2]));
+        ((Button) findViewById(R.id.button_squats_4)).setText(String.valueOf(setArr[3]));
+        ((Button) findViewById(R.id.button_squats_5)).setText(String.valueOf(setArr[4]));
 
         ((EditText) findViewById(R.id.edit_squats)).setText(String.valueOf(exercises[0].getWeight()));
 
         if(type == Workout.WORKOUT_A) {
         /* bench */
             setArr = exercises[1].getSets();
-            button = (Button) findViewById(R.id.button_bench_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_bench_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_bench_3);
-            button.setText(String.valueOf(setArr[2]));
-            button = (Button) findViewById(R.id.button_bench_4);
-            button.setText(String.valueOf(setArr[3]));
-            button = (Button) findViewById(R.id.button_bench_5);
-            button.setText(String.valueOf(setArr[4]));
+            ((Button) findViewById(R.id.button_bench_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_bench_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_bench_3)).setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_bench_4)).setText(String.valueOf(setArr[3]));
+            ((Button) findViewById(R.id.button_bench_5)).setText(String.valueOf(setArr[4]));
 
             ((EditText) findViewById(R.id.edit_bench)).setText(String.valueOf(exercises[1].getWeight()));
 
         /* row */
             setArr = exercises[2].getSets();
-            button = (Button) findViewById(R.id.button_row_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_row_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_row_3);
-            button.setText(String.valueOf(setArr[2]));
-            button = (Button) findViewById(R.id.button_row_4);
-            button.setText(String.valueOf(setArr[3]));
-            button = (Button) findViewById(R.id.button_row_5);
-            button.setText(String.valueOf(setArr[4]));
+            ((Button) findViewById(R.id.button_row_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_row_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_row_3)).setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_row_4)).setText(String.valueOf(setArr[3]));
+            ((Button) findViewById(R.id.button_row_5)).setText(String.valueOf(setArr[4]));
 
             ((EditText) findViewById(R.id.edit_row)).setText(String.valueOf(exercises[2].getWeight()));
 
         /* shrugs */
             setArr = exercises[3].getSets();
-            button = (Button) findViewById(R.id.button_shrugs_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_shrugs_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_shrugs_3);
-            button.setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_shrugs_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_shrugs_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_shrugs_3)).setText(String.valueOf(setArr[2]));
 
             ((EditText) findViewById(R.id.edit_shrugs)).setText(String.valueOf(exercises[3].getWeight()));
 
         /* tricep extensions */
             setArr = exercises[4].getSets();
-            button = (Button) findViewById(R.id.button_tricep_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_tricep_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_tricep_3);
-            button.setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_tricep_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_tricep_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_tricep_3)).setText(String.valueOf(setArr[2]));
 
             ((EditText) findViewById(R.id.edit_tricep)).setText(String.valueOf(exercises[4].getWeight()));
 
         /* incline curls */
             setArr = exercises[5].getSets();
-            button = (Button) findViewById(R.id.button_incline_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_incline_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_incline_3);
-            button.setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_incline_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_incline_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_incline_3)).setText(String.valueOf(setArr[2]));
 
             ((EditText) findViewById(R.id.edit_incline)).setText(String.valueOf(exercises[5].getWeight()));
 
         /* hyperextensions */
             setArr = exercises[6].getSets();
-            button = (Button) findViewById(R.id.button_hyperextensions_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_hyperextensions_2);
-            button.setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_hyperextensions_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_hyperextensions_2)).setText(String.valueOf(setArr[1]));
 
             ((EditText) findViewById(R.id.edit_hyperextensions)).setText(String.valueOf(exercises[6].getWeight()));
 
-        /* incline curls */
+        /* cable crunches */
             setArr = exercises[7].getSets();
-            button = (Button) findViewById(R.id.button_crunches_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_crunches_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_crunches_3);
-            button.setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_crunches_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_crunches_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_crunches_3)).setText(String.valueOf(setArr[2]));
 
             ((EditText) findViewById(R.id.edit_crunches)).setText(String.valueOf(exercises[7].getWeight()));
         } else {
-        /* deadlif */
+        /* deadlift */
             setArr = exercises[1].getSets();
-            button = (Button) findViewById(R.id.button_deadlift_1);
-            button.setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_deadlift_1)).setText(String.valueOf(setArr[0]));
 
             ((EditText) findViewById(R.id.edit_deadlift)).setText(String.valueOf(exercises[1].getWeight()));
 
         /* standing */
             setArr = exercises[2].getSets();
-            button = (Button) findViewById(R.id.button_standing_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_standing_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_standing_3);
-            button.setText(String.valueOf(setArr[2]));
-            button = (Button) findViewById(R.id.button_standing_4);
-            button.setText(String.valueOf(setArr[3]));
-            button = (Button) findViewById(R.id.button_standing_5);
-            button.setText(String.valueOf(setArr[4]));
+            ((Button) findViewById(R.id.button_standing_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_standing_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_standing_3)).setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_standing_4)).setText(String.valueOf(setArr[3]));
+            ((Button) findViewById(R.id.button_standing_5)).setText(String.valueOf(setArr[4]));
 
             ((EditText) findViewById(R.id.edit_standing)).setText(String.valueOf(exercises[2].getWeight()));
 
         /* bent */
             setArr = exercises[3].getSets();
-            button = (Button) findViewById(R.id.button_bent_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_bent_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_bent_3);
-            button.setText(String.valueOf(setArr[2]));
-            button = (Button) findViewById(R.id.button_bent_4);
-            button.setText(String.valueOf(setArr[3]));
-            button = (Button) findViewById(R.id.button_bent_5);
-            button.setText(String.valueOf(setArr[4]));
+            ((Button) findViewById(R.id.button_bent_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_bent_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_bent_3)).setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_bent_4)).setText(String.valueOf(setArr[3]));
+            ((Button) findViewById(R.id.button_bent_5)).setText(String.valueOf(setArr[4]));
 
             ((EditText) findViewById(R.id.edit_bent)).setText(String.valueOf(exercises[3].getWeight()));
 
         /* close grip bench press*/
             setArr = exercises[4].getSets();
-            button = (Button) findViewById(R.id.button_close_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_close_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_close_3);
-            button.setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_close_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_close_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_close_3)).setText(String.valueOf(setArr[2]));
 
             ((EditText) findViewById(R.id.edit_close)).setText(String.valueOf(exercises[4].getWeight()));
 
         /* incline curls */
             setArr = exercises[5].getSets();
-            button = (Button) findViewById(R.id.button_incline_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_incline_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_incline_3);
-            button.setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_incline_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_incline_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_incline_3)).setText(String.valueOf(setArr[2]));
 
             ((EditText) findViewById(R.id.edit_incline)).setText(String.valueOf(exercises[5].getWeight()));
 
         /* hyperextensions */
             setArr = exercises[6].getSets();
-            button = (Button) findViewById(R.id.button_crunches_1);
-            button.setText(String.valueOf(setArr[0]));
-            button = (Button) findViewById(R.id.button_crunches_2);
-            button.setText(String.valueOf(setArr[1]));
-            button = (Button) findViewById(R.id.button_crunches_3);
-            button.setText(String.valueOf(setArr[2]));
+            ((Button) findViewById(R.id.button_incline_1)).setText(String.valueOf(setArr[0]));
+            ((Button) findViewById(R.id.button_incline_2)).setText(String.valueOf(setArr[1]));
+            ((Button) findViewById(R.id.button_incline_3)).setText(String.valueOf(setArr[2]));
 
             ((EditText) findViewById(R.id.edit_crunches)).setText(String.valueOf(exercises[6].getWeight()));
         }
