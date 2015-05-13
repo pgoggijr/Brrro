@@ -29,7 +29,7 @@ public class WorkoutActivity extends ActionBarActivity
     /*weight dialog methods */
     @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
-        System.out.println(((WeightDialog) dialog).getWeight());
+        ((TextView) findViewById(weightDialogCaller)).setText(((WeightDialog) dialog).getWeight());
     }
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {

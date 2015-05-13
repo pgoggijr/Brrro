@@ -7,6 +7,7 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
@@ -41,18 +42,8 @@ public class WeightDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         weightView.setText(weight);
-        /*weightView.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });*/
+        weightView.setInputType(InputType.TYPE_CLASS_NUMBER);
+        weightView.selectAll();
         weightEditable = weightView.getText();
 
         /* set up builder */
