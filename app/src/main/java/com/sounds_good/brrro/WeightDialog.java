@@ -20,8 +20,8 @@ public class WeightDialog extends DialogFragment {
     private Editable weightEditable;
 
     public interface WeightDialogListener {
-        void onDialogPositiveClick(DialogFragment Dialog);
-        void onDialogNegativeClick(DialogFragment Dialog);
+        void onDialogPositiveClick(WeightDialog Dialog);
+        void onDialogNegativeClick(WeightDialog Dialog);
     }
 
     WeightDialogListener mListener;

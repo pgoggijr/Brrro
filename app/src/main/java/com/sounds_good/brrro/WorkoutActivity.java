@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,11 +29,20 @@ public class WorkoutActivity extends ActionBarActivity
 
     /*weight dialog methods */
     @Override
-    public void onDialogPositiveClick(DialogFragment dialog) {
-        ((TextView) findViewById(weightDialogCaller)).setText(((WeightDialog) dialog).getWeight());
+    public void onDialogPositiveClick(WeightDialog dialog) {
+        String weight = dialog.getWeight();
+        int weightInt;
+        try {
+            weightInt = Integer.parseInt(weight);
+            ((TextView) findViewById(weightDialogCaller)).setText(String.valueOf(weight));
+            updateWeight(weightDialogCaller, weightInt);
+        } catch (NumberFormatException e) {
+            Toast toast  = Toast.makeText(getApplicationContext(),"Please enter a valid number", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
     @Override
-    public void onDialogNegativeClick(DialogFragment dialog) {
+    public void onDialogNegativeClick(WeightDialog dialog) {
     }
 
     @Override
@@ -82,42 +92,23 @@ public class WorkoutActivity extends ActionBarActivity
         dialog.show(getFragmentManager(),"updateWeight");
     }
 
+    public void updateWeight(int viewId, int weight) {
+        String viewName = getResources().getResourceEntryName(viewId);
+        if(viewName.matches("edit_([A-z])*")) {
+            String[] idArr = viewName.split("_");
+            int index = indexFinder(idArr[1]);
+            exercises[index].setWeight(weight);
+        }
+    }
+
     public void updateSet(View view) {
         int id = view.getId();
         String idName = getResources().getResourceEntryName(id);
         if(idName.matches("button_([A-z])*_[1-5]")) {
             String[] idArr;
             idArr = idName.split("_");
-            int index;
+            int index = indexFinder(idArr[1]);
             int set = Integer.parseInt(idArr[2]);
-
-            /* Switching isn't working on a string, despite compiling w/ java 7
-                Thanks java, for this disgusting if else block */
-            if(idArr[1].compareTo("squats") == 0) {
-                index = 0;
-            } else if(idArr[1].compareTo("bench") == 0
-                || idArr[1].compareTo("deadlift") == 0) {
-                index = 1;
-            } else if(idArr[1].compareTo("row") == 0
-                    || idArr[1].compareTo("standing") == 0) {
-                index = 2;
-            } else if(idArr[1].compareTo("shrugs") == 0
-                    || idArr[1].compareTo("bent") == 0) {
-                index = 3;
-            } else if(idArr[1].compareTo("tricep") == 0
-                    || idArr[1].compareTo("close") == 0) {
-                index = 4;
-            } else if(idArr[1].compareTo("incline") == 0) {
-                index = 5;
-            } else if(idArr[1].compareTo("hyperextensions") == 0
-                    || (idArr[1].compareTo("crunches") == 0
-                        && type == Workout.WORKOUT_B)) {
-                index = 6;
-            } else if(idArr[1].compareTo("crunches") == 0) {
-                index = 7;
-            } else {
-                return;
-            }
 
             ((Button) view).setText(String.valueOf(exercises[index].updateSet(set - 1)));
         }
@@ -154,6 +145,33 @@ public class WorkoutActivity extends ActionBarActivity
         dbAdapter.updateWorkout(workout);
         dbAdapter.getWorkout(workout.getDate()).printWorkout();
         dbAdapter.close();
+    }
+
+    /* used to get a workout index by workout name */
+    private int indexFinder(String workoutName) {
+        if(workoutName.compareTo("bench") == 0
+                || workoutName.compareTo("deadlift") == 0) {
+            return 1;
+        } else if(workoutName.compareTo("row") == 0
+                || workoutName.compareTo("standing") == 0) {
+            return 2;
+        } else if(workoutName.compareTo("shrugs") == 0
+                || workoutName.compareTo("bent") == 0) {
+            return 3;
+        } else if(workoutName.compareTo("tricep") == 0
+                || workoutName.compareTo("close") == 0) {
+            return 4;
+        } else if(workoutName.compareTo("incline") == 0) {
+            return 5;
+        } else if(workoutName.compareTo("hyperextensions") == 0
+                || (workoutName.compareTo("crunches") == 0
+                && type == Workout.WORKOUT_B)) {
+            return 6;
+        } else if(workoutName.compareTo("crunches") == 0) {
+            return 7;
+        } else {
+            return 0;
+        }
     }
 
     public void initViews() {
