@@ -9,6 +9,8 @@
     <string name="title_activity_workout">WorkoutActivity</string>
     <string name="title_activity_workout_a">WorkoutAActivity</string>
     <string name="workout_for">Workout for: </string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Exercise names -->
     <string name="squats">Squats</string>
@@ -28,5 +30,6 @@
     <!-- Text for Workout Activity -->
     <string name="weight_label">Weight: </string>
     <string name="save">Save Workout</string>
+    <string name="dialog_change_weight">Enter a new weight value</string>
 
 </resources>

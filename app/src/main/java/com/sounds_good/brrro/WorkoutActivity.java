@@ -1,5 +1,6 @@
 package com.sounds_good.brrro;
 
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -7,12 +8,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class WorkoutActivity extends ActionBarActivity {
+public class WorkoutActivity extends ActionBarActivity
+    implements WeightDialog.WeightDialogListener{
+
 
     private Workout workout;
     private Exercise[] exercises;
@@ -20,20 +23,33 @@ public class WorkoutActivity extends ActionBarActivity {
     private WorkoutDatabaseAdapter dbAdapter;
     private int[] weights;
     private int type;
+    private WeightDialog dialog;
+    private int weightDialogCaller;
+
+    /*weight dialog methods */
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        System.out.println(((WeightDialog) dialog).getWeight());
+    }
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        dialog = new WeightDialog();
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         dbAdapter = new WorkoutDatabaseAdapter(this);
 
+        /* get date from previous activity */
         date = intent.getStringExtra("date");
-
         if(date == null) {
             date = sdf.format(new Date());
         }
 
+        /* get workout from database */
         dbAdapter.open();
         workout = dbAdapter.getWorkout(date);
         if (workout == null) {
@@ -45,6 +61,8 @@ public class WorkoutActivity extends ActionBarActivity {
             dbAdapter.insertWorkout(workout);
         }
         dbAdapter.close();
+
+        /*initialize layout */
         exercises = workout.getExercises();
         type = workout.getType();
         if(type == Workout.WORKOUT_A) {
@@ -53,6 +71,15 @@ public class WorkoutActivity extends ActionBarActivity {
             setContentView(R.layout.activity_workout_b);
         }
         initViews();
+
+
+    }
+
+    public void updateWeight(View view) {
+        weightDialogCaller = view.getId();
+        String weight = ((TextView) view).getText().toString();
+        dialog.setWeight(weight);
+        dialog.show(getFragmentManager(),"updateWeight");
     }
 
     public void updateSet(View view) {
@@ -141,7 +168,7 @@ public class WorkoutActivity extends ActionBarActivity {
         ((Button) findViewById(R.id.button_squats_4)).setText(String.valueOf(setArr[3]));
         ((Button) findViewById(R.id.button_squats_5)).setText(String.valueOf(setArr[4]));
 
-        ((EditText) findViewById(R.id.edit_squats)).setText(String.valueOf(exercises[0].getWeight()));
+        ((TextView) findViewById(R.id.edit_squats)).setText(String.valueOf(exercises[0].getWeight()));
 
         if(type == Workout.WORKOUT_A) {
         /* bench */
@@ -152,7 +179,7 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_bench_4)).setText(String.valueOf(setArr[3]));
             ((Button) findViewById(R.id.button_bench_5)).setText(String.valueOf(setArr[4]));
 
-            ((EditText) findViewById(R.id.edit_bench)).setText(String.valueOf(exercises[1].getWeight()));
+            ((TextView) findViewById(R.id.edit_bench)).setText(String.valueOf(exercises[1].getWeight()));
 
         /* row */
             setArr = exercises[2].getSets();
@@ -162,7 +189,7 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_row_4)).setText(String.valueOf(setArr[3]));
             ((Button) findViewById(R.id.button_row_5)).setText(String.valueOf(setArr[4]));
 
-            ((EditText) findViewById(R.id.edit_row)).setText(String.valueOf(exercises[2].getWeight()));
+            ((TextView) findViewById(R.id.edit_row)).setText(String.valueOf(exercises[2].getWeight()));
 
         /* shrugs */
             setArr = exercises[3].getSets();
@@ -170,7 +197,7 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_shrugs_2)).setText(String.valueOf(setArr[1]));
             ((Button) findViewById(R.id.button_shrugs_3)).setText(String.valueOf(setArr[2]));
 
-            ((EditText) findViewById(R.id.edit_shrugs)).setText(String.valueOf(exercises[3].getWeight()));
+            ((TextView) findViewById(R.id.edit_shrugs)).setText(String.valueOf(exercises[3].getWeight()));
 
         /* tricep extensions */
             setArr = exercises[4].getSets();
@@ -178,7 +205,7 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_tricep_2)).setText(String.valueOf(setArr[1]));
             ((Button) findViewById(R.id.button_tricep_3)).setText(String.valueOf(setArr[2]));
 
-            ((EditText) findViewById(R.id.edit_tricep)).setText(String.valueOf(exercises[4].getWeight()));
+            ((TextView) findViewById(R.id.edit_tricep)).setText(String.valueOf(exercises[4].getWeight()));
 
         /* incline curls */
             setArr = exercises[5].getSets();
@@ -186,14 +213,14 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_incline_2)).setText(String.valueOf(setArr[1]));
             ((Button) findViewById(R.id.button_incline_3)).setText(String.valueOf(setArr[2]));
 
-            ((EditText) findViewById(R.id.edit_incline)).setText(String.valueOf(exercises[5].getWeight()));
+            ((TextView) findViewById(R.id.edit_incline)).setText(String.valueOf(exercises[5].getWeight()));
 
         /* hyperextensions */
             setArr = exercises[6].getSets();
             ((Button) findViewById(R.id.button_hyperextensions_1)).setText(String.valueOf(setArr[0]));
             ((Button) findViewById(R.id.button_hyperextensions_2)).setText(String.valueOf(setArr[1]));
 
-            ((EditText) findViewById(R.id.edit_hyperextensions)).setText(String.valueOf(exercises[6].getWeight()));
+            ((TextView) findViewById(R.id.edit_hyperextensions)).setText(String.valueOf(exercises[6].getWeight()));
 
         /* cable crunches */
             setArr = exercises[7].getSets();
@@ -201,13 +228,13 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_crunches_2)).setText(String.valueOf(setArr[1]));
             ((Button) findViewById(R.id.button_crunches_3)).setText(String.valueOf(setArr[2]));
 
-            ((EditText) findViewById(R.id.edit_crunches)).setText(String.valueOf(exercises[7].getWeight()));
+            ((TextView) findViewById(R.id.edit_crunches)).setText(String.valueOf(exercises[7].getWeight()));
         } else {
         /* deadlift */
             setArr = exercises[1].getSets();
             ((Button) findViewById(R.id.button_deadlift_1)).setText(String.valueOf(setArr[0]));
 
-            ((EditText) findViewById(R.id.edit_deadlift)).setText(String.valueOf(exercises[1].getWeight()));
+            ((TextView) findViewById(R.id.edit_deadlift)).setText(String.valueOf(exercises[1].getWeight()));
 
         /* standing */
             setArr = exercises[2].getSets();
@@ -217,7 +244,7 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_standing_4)).setText(String.valueOf(setArr[3]));
             ((Button) findViewById(R.id.button_standing_5)).setText(String.valueOf(setArr[4]));
 
-            ((EditText) findViewById(R.id.edit_standing)).setText(String.valueOf(exercises[2].getWeight()));
+            ((TextView) findViewById(R.id.edit_standing)).setText(String.valueOf(exercises[2].getWeight()));
 
         /* bent */
             setArr = exercises[3].getSets();
@@ -227,7 +254,7 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_bent_4)).setText(String.valueOf(setArr[3]));
             ((Button) findViewById(R.id.button_bent_5)).setText(String.valueOf(setArr[4]));
 
-            ((EditText) findViewById(R.id.edit_bent)).setText(String.valueOf(exercises[3].getWeight()));
+            ((TextView) findViewById(R.id.edit_bent)).setText(String.valueOf(exercises[3].getWeight()));
 
         /* close grip bench press*/
             setArr = exercises[4].getSets();
@@ -235,7 +262,7 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_close_2)).setText(String.valueOf(setArr[1]));
             ((Button) findViewById(R.id.button_close_3)).setText(String.valueOf(setArr[2]));
 
-            ((EditText) findViewById(R.id.edit_close)).setText(String.valueOf(exercises[4].getWeight()));
+            ((TextView) findViewById(R.id.edit_close)).setText(String.valueOf(exercises[4].getWeight()));
 
         /* incline curls */
             setArr = exercises[5].getSets();
@@ -243,7 +270,7 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_incline_2)).setText(String.valueOf(setArr[1]));
             ((Button) findViewById(R.id.button_incline_3)).setText(String.valueOf(setArr[2]));
 
-            ((EditText) findViewById(R.id.edit_incline)).setText(String.valueOf(exercises[5].getWeight()));
+            ((TextView) findViewById(R.id.edit_incline)).setText(String.valueOf(exercises[5].getWeight()));
 
         /* hyperextensions */
             setArr = exercises[6].getSets();
@@ -251,7 +278,7 @@ public class WorkoutActivity extends ActionBarActivity {
             ((Button) findViewById(R.id.button_incline_2)).setText(String.valueOf(setArr[1]));
             ((Button) findViewById(R.id.button_incline_3)).setText(String.valueOf(setArr[2]));
 
-            ((EditText) findViewById(R.id.edit_crunches)).setText(String.valueOf(exercises[6].getWeight()));
+            ((TextView) findViewById(R.id.edit_crunches)).setText(String.valueOf(exercises[6].getWeight()));
         }
     }
 }

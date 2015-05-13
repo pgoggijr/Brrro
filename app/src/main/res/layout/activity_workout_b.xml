@@ -46,14 +46,16 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/weight_label"
                     android:id="@+id/textView2"
-                    android:labelFor="@+id/edit_squats" />
+                    android:labelFor="@+id/edit_squats"
+                    android:paddingRight="20dp"/>
 
-                <EditText
+                <TextView
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/edit_squats" />
+                    android:id="@+id/edit_squats"
+                    android:onClick="updateWeight"/>
             </LinearLayout>
 
             <LinearLayout
@@ -122,14 +124,16 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/weight_label"
                     android:id="@+id/text_weight_deadlift"
-                    android:labelFor="@+id/edit_deadlift" />
+                    android:labelFor="@+id/edit_deadlift"
+                    android:paddingRight="20dp"/>
 
-                <EditText
+                <TextView
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/edit_deadlift" />
+                    android:id="@+id/edit_deadlift"
+                    android:onClick="updateWeight"/>
             </LinearLayout>
 
             <LinearLayout
@@ -171,14 +175,16 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/weight_label"
                     android:id="@+id/text_weight_standing"
-                    android:labelFor="@+id/edit_standing" />
+                    android:labelFor="@+id/edit_standing"
+                    android:paddingRight="20dp"/>
 
-                <EditText
+                <TextView
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/edit_standing" />
+                    android:id="@+id/edit_standing"
+                    android:onClick="updateWeight"/>
             </LinearLayout>
 
             <LinearLayout
@@ -251,14 +257,16 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/weight_label"
                     android:id="@+id/text_weight_bent"
-                    android:labelFor="@+id/edit_bent" />
+                    android:labelFor="@+id/edit_bent"
+                    android:paddingRight="20dp"/>
 
-                <EditText
+                <TextView
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/edit_bent" />
+                    android:id="@+id/edit_bent"
+                    android:onClick="updateWeight"/>
             </LinearLayout>
 
             <LinearLayout
@@ -330,14 +338,16 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/weight_label"
                     android:id="@+id/text_weight_close"
-                    android:labelFor="@+id/edit_close" />
+                    android:labelFor="@+id/edit_close"
+                    android:paddingRight="20dp"/>
 
-                <EditText
+                <TextView
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/edit_close" />
+                    android:id="@+id/edit_close"
+                    android:onClick="updateWeight"/>
             </LinearLayout>
 
             <LinearLayout
@@ -394,14 +404,16 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/weight_label"
                     android:id="@+id/text_weight_incline"
-                    android:labelFor="@+id/edit_incline" />
+                    android:labelFor="@+id/edit_incline"
+                    android:paddingRight="20dp"/>
 
-                <EditText
+                <TextView
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/edit_incline" />
+                    android:id="@+id/edit_incline"
+                    android:onClick="updateWeight"/>
             </LinearLayout>
 
             <LinearLayout
@@ -458,14 +470,16 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/weight_label"
                     android:id="@+id/text_weight_crunches"
-                    android:labelFor="@+id/edit_crunches" />
+                    android:labelFor="@+id/edit_crunches"
+                    android:paddingRight="20dp"/>
 
-                <EditText
+                <TextView
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/edit_crunches" />
+                    android:id="@+id/edit_crunches"
+                    android:onClick="updateWeight"/>
             </LinearLayout>
 
             <LinearLayout
