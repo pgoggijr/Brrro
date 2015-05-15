@@ -26,7 +26,8 @@
         <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -34,7 +35,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="170dp"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/squats"
@@ -106,7 +107,8 @@
         <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -114,7 +116,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="170dp"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/bench_press"
@@ -183,7 +185,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -191,7 +194,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="170dp"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/bent_over_row"
@@ -264,7 +267,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -272,7 +276,7 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:layout_width="170dp"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/barbell_shrugs"
@@ -330,7 +334,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -338,7 +343,7 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:layout_width="170dp"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/tricep_extensions"
@@ -395,7 +400,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -403,7 +409,7 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:layout_width="170dp"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/incline_curls"
@@ -460,7 +466,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -468,7 +475,7 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:layout_width="170dp"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/hyperextensions"
@@ -518,7 +525,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -526,7 +534,7 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:layout_width="170dp"
+                    android:layout_width="225dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/cable_crunches"

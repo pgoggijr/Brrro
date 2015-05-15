@@ -26,7 +26,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -34,11 +35,11 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="170dp"
+                    android:layout_width="225dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/squats"
-                    android:id="@+id/text_squats" />
+                    android:id="@+id/text_squats"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -53,7 +54,7 @@
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:ems="10"
+                    android:ems="20"
                     android:id="@+id/edit_squats"
                     android:onClick="updateWeight"/>
             </LinearLayout>
@@ -104,7 +105,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -112,7 +114,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="170dp"
+                    android:layout_width="225dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/deadlift"
@@ -155,7 +157,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -163,7 +166,7 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:layout_width="170dp"
+                    android:layout_width="225dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/standing_press"
@@ -237,7 +240,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -245,7 +249,7 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:layout_width="170dp"
+                    android:layout_width="225dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/bent_over_row"
@@ -318,15 +322,16 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="60dp" >
+                android:layout_height="match_parent" >
 
                 <TextView
-                    android:layout_width="170dp"
+                    android:layout_width="225dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/close_grip_bench_press"
@@ -384,7 +389,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -392,7 +398,7 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:layout_width="170dp"
+                    android:layout_width="225dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/incline_curls"
@@ -450,7 +456,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -458,7 +465,7 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:layout_width="170dp"
+                    android:layout_width="225dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/cable_crunches"
