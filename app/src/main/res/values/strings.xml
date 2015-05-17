@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Brrro</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="welcome">Welcome to Brrro!</string>
     <string name="action_settings">Settings</string>
     <string name="log_workout_button">Log Workout</string>
     <string name="workout_history_button">Check History</string>
