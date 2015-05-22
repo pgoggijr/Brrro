@@ -58,7 +58,7 @@
                 android:layout_weight="1"
                 android:textAlignment="textEnd"
                 android:text="45"
-                android:onClick="updateWeight"/>
+                android:onClick="openWeightDialog"/>
         </LinearLayout>
 
         <LinearLayout
@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_bench"
-                android:onClick="updateWeight"/>
+                android:onClick="openWeightDialog"/>
         </LinearLayout>
 
         <LinearLayout
@@ -214,7 +214,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_row"
-                android:onClick="updateWeight"/>
+                android:onClick="openWeightDialog"/>
         </LinearLayout>
 
         <LinearLayout
@@ -296,7 +296,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_shrugs"
-                android:onClick="updateWeight"/>
+                android:onClick="openWeightDialog"/>
         </LinearLayout>
 
         <LinearLayout
@@ -363,7 +363,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_tricep"
-                android:onClick="updateWeight"/>
+                android:onClick="openWeightDialog"/>
         </LinearLayout>
 
         <LinearLayout
@@ -429,7 +429,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_incline"
-                android:onClick="updateWeight"/>
+                android:onClick="openWeightDialog"/>
         </LinearLayout>
 
         <LinearLayout
@@ -495,7 +495,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_hyperextensions"
-                android:onClick="updateWeight"/>
+                android:onClick="openWeightDialog"/>
         </LinearLayout>
 
         <LinearLayout
@@ -554,7 +554,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:id="@+id/edit_crunches"
-                    android:onClick="updateWeight"/>
+                    android:onClick="openWeightDialog"/>
             </LinearLayout>
 
             <LinearLayout

@@ -56,7 +56,7 @@
                     android:inputType="number"
                     android:ems="20"
                     android:id="@+id/edit_squats"
-                    android:onClick="updateWeight"/>
+                    android:onClick="openWeightDialog"/>
             </LinearLayout>
 
             <LinearLayout
@@ -135,7 +135,7 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/edit_deadlift"
-                    android:onClick="updateWeight"/>
+                    android:onClick="openWeightDialog"/>
             </LinearLayout>
 
             <LinearLayout
@@ -187,7 +187,7 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/edit_standing"
-                    android:onClick="updateWeight"/>
+                    android:onClick="openWeightDialog"/>
             </LinearLayout>
 
             <LinearLayout
@@ -270,7 +270,7 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/edit_bent"
-                    android:onClick="updateWeight"/>
+                    android:onClick="openWeightDialog"/>
             </LinearLayout>
 
             <LinearLayout
@@ -352,7 +352,7 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/edit_close"
-                    android:onClick="updateWeight"/>
+                    android:onClick="openWeightDialog"/>
             </LinearLayout>
 
             <LinearLayout
@@ -419,7 +419,7 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/edit_incline"
-                    android:onClick="updateWeight"/>
+                    android:onClick="openWeightDialog"/>
             </LinearLayout>
 
             <LinearLayout
@@ -486,7 +486,7 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/edit_crunches"
-                    android:onClick="updateWeight"/>
+                    android:onClick="openWeightDialog"/>
             </LinearLayout>
 
             <LinearLayout

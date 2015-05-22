@@ -27,7 +27,7 @@ public class WorkoutActivity extends ActionBarActivity
     private WeightDialog dialog;
     private int weightDialogCaller;
 
-    /*weight dialog methods */
+    /*weight dialog listener methods */
     @Override
     public void onDialogPositiveClick(WeightDialog dialog) {
         String weight = dialog.getWeight();
@@ -85,13 +85,15 @@ public class WorkoutActivity extends ActionBarActivity
 
     }
 
-    public void updateWeight(View view) {
+    /* opens the change weight dialog box when the weight of an exercise is pressed*/
+    public void openWeightDialog(View view) {
         weightDialogCaller = view.getId();
         String weight = ((TextView) view).getText().toString();
         dialog.setWeight(weight);
-        dialog.show(getFragmentManager(),"updateWeight");
+        dialog.show(getFragmentManager(),"openWeightDialog");
     }
 
+    /* callback for the weight dialog to actually update the weight of an exercise */
     public void updateWeight(int viewId, int weight) {
         String viewName = getResources().getResourceEntryName(viewId);
         if(viewName.matches("edit_([A-z])*")) {
@@ -101,6 +103,7 @@ public class WorkoutActivity extends ActionBarActivity
         }
     }
 
+    /* increments reps for a set by 1 when user taps the button associated with a set */
     public void updateSet(View view) {
         int id = view.getId();
         String idName = getResources().getResourceEntryName(id);
@@ -114,32 +117,7 @@ public class WorkoutActivity extends ActionBarActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_workout_a, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            workout.printWorkout();
-            dbAdapter.open();
-            System.out.println(dbAdapter.getWorkoutId(workout.getDate()));
-            dbAdapter.close();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
+    /* updates the workout in the database */
     public void updateWorkout(View view) {
         dbAdapter.open();
         dbAdapter.updateWorkout(workout);
@@ -174,8 +152,8 @@ public class WorkoutActivity extends ActionBarActivity
         }
     }
 
+    /* initializes all buttons and weights in the activity */
     public void initViews() {
-
         int[] setArr;
 
         /* squats */
@@ -298,5 +276,31 @@ public class WorkoutActivity extends ActionBarActivity
 
             ((TextView) findViewById(R.id.edit_crunches)).setText(String.valueOf(exercises[6].getWeight()));
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_workout_a, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            workout.printWorkout();
+            dbAdapter.open();
+            System.out.println(dbAdapter.getWorkoutId(workout.getDate()));
+            dbAdapter.close();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
