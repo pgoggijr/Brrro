@@ -83,6 +83,6 @@ crashlytics-build.properties
 
 .DS_Store
 
-//cuke screens
-cuke/*.png
-.irb_history
+# cuke screens
+/cuke/*.png
+.irb-history
