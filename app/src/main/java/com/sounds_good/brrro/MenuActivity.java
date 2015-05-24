@@ -18,7 +18,6 @@ public class MenuActivity extends AppCompatActivity {
     SharedPreferences prefs = null;
 
     public void checkHistory(View view) {
-        System.out.println("checking history");
         Intent intent = new Intent(MenuActivity.this, HistoryActivity.class);
         MenuActivity.this.startActivity(intent);
     }
@@ -70,7 +69,6 @@ public class MenuActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        System.out.println("BLAHHH");
         switch (item.getItemId()) {
             case R.id.action_settings:
                 return true;
