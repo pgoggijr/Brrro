@@ -35,30 +35,23 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="225dp"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/squats"
                 android:id="@+id/text_squats" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/weight_label"
-                android:id="@+id/text_weight_squats"
-                android:labelFor="@+id/edit_squats"
-                android:paddingRight="20dp"/>
-
-            <TextView
-                android:layout_width="50dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_squats"
                 android:layout_weight="1"
                 android:textAlignment="textEnd"
-                android:text="45"
-                android:onClick="openWeightDialog"/>
+                android:onClick="openWeightDialog" android:textSize="20sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/pounds"
+                      android:id="@+id/units_squats" android:paddingLeft="0dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -116,30 +109,24 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="225dp"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/bench_press"
                 android:id="@+id/text_bench" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/weight_label"
-                android:id="@+id/text_weight_bench"
-                android:labelFor="@+id/edit_bench"
-                android:paddingRight="20dp"/>
-
-            <TextView
-                android:layout_width="50dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_bench"
-                android:onClick="openWeightDialog"/>
+                android:onClick="openWeightDialog" android:textSize="20sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/pounds"
+                      android:id="@+id/units_bench" android:paddingLeft="0dp"/>
         </LinearLayout>
 
-        <LinearLayout
+            <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -194,27 +181,21 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="225dp"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/bent_over_row"
                 android:id="@+id/text_row" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/weight_label"
-                android:id="@+id/text_weight_row"
-                android:labelFor="@+id/edit_row"
-                android:paddingRight="20dp"/>
-
-            <TextView
-                android:layout_width="50dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_row"
-                android:onClick="openWeightDialog"/>
+                android:onClick="openWeightDialog" android:textSize="20sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/pounds"
+                      android:id="@+id/units_row" android:paddingLeft="0dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -276,27 +257,21 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:layout_width="225dp"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/barbell_shrugs"
                 android:id="@+id/text_shrugs" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/weight_label"
-                android:id="@+id/text_weight_shrugs"
-                android:labelFor="@+id/edit_shrugs"
-                android:paddingRight="20dp"/>
-
-            <TextView
-                android:layout_width="50dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_shrugs"
-                android:onClick="openWeightDialog"/>
+                android:onClick="openWeightDialog" android:textSize="20sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/pounds"
+                      android:id="@+id/units_shrugs" android:paddingLeft="0dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -343,27 +318,21 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:layout_width="225dp"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/tricep_extensions"
                 android:id="@+id/text_tricep" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/weight_label"
-                android:id="@+id/text_weight_tricep"
-                android:labelFor="@+id/edit_tricep"
-                android:paddingRight="20dp"/>
-
-            <TextView
-                android:layout_width="50dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_tricep"
-                android:onClick="openWeightDialog"/>
+                android:onClick="openWeightDialog" android:textSize="20sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/pounds"
+                      android:id="@+id/units_tricep" android:paddingLeft="0dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -409,27 +378,21 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:layout_width="225dp"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/incline_curls"
                 android:id="@+id/text_incline" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/weight_label"
-                android:id="@+id/text_weight_incline"
-                android:labelFor="@+id/edit_incline"
-                android:paddingRight="20dp"/>
-
-            <TextView
-                android:layout_width="50dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_incline"
-                android:onClick="openWeightDialog"/>
+                android:onClick="openWeightDialog" android:textSize="20sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/pounds"
+                      android:id="@+id/units_incline" android:paddingLeft="0dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -475,27 +438,21 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:layout_width="225dp"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/hyperextensions"
                 android:id="@+id/text_hyperextensions" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/weight_label"
-                android:id="@+id/text_weight_hyperextensions"
-                android:labelFor="@+id/edit_hyperextensions"
-                android:paddingRight="20dp"/>
-
-            <TextView
-                android:layout_width="50dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/edit_hyperextensions"
-                android:onClick="openWeightDialog"/>
+                android:onClick="openWeightDialog" android:textSize="20sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/pounds"
+                      android:id="@+id/units_hyperextensions" android:paddingLeft="0dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -534,27 +491,21 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:layout_width="225dp"
+                    android:layout_width="215dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/cable_crunches"
                     android:id="@+id/text_crunches" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/weight_label"
-                    android:id="@+id/text_weight_crunches"
-                    android:labelFor="@+id/edit_crunches"
-                    android:paddingRight="20dp"/>
-
-                <TextView
-                    android:layout_width="50dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:id="@+id/edit_crunches"
-                    android:onClick="openWeightDialog"/>
+                    android:onClick="openWeightDialog" android:textSize="20sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/pounds"
+                          android:id="@+id/units_crunches" android:paddingLeft="0dp"/>
             </LinearLayout>
 
             <LinearLayout

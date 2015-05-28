@@ -31,5 +31,7 @@
     <string name="weight_label">Weight: </string>
     <string name="save">Save Workout</string>
     <string name="dialog_change_weight">Enter a new weight value</string>
+    <string name="pounds">lbs</string>
+    <string name="kilograms">kg</string>
 
 </resources>

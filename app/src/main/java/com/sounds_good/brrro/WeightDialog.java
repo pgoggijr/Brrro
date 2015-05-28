@@ -7,11 +7,11 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -51,6 +51,8 @@ public class WeightDialog extends DialogFragment {
         EditText weightView = new EditText(getActivity());
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         float density = getActivity().getResources().getDisplayMetrics().density;
+        InputFilter[] filters = new InputFilter[1];
+        filters[0] = new InputFilter.LengthFilter(3);
 
         /* set up edit text view & its layout */
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -63,6 +65,7 @@ public class WeightDialog extends DialogFragment {
                 (int) density * 100,0,
                 (int) density * 100,0);
 
+        weightView.setFilters(filters);
         weightView.setText(weight);
         weightView.setInputType(InputType.TYPE_CLASS_NUMBER);
         weightView.selectAll();
