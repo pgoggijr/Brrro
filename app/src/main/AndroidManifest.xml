@@ -12,8 +12,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MenuActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +22,7 @@
         <activity
             android:name=".HistoryActivity"
             android:label="Workout History"
-            android:parentActivityName=".MenuActivity"
-            android:theme="@style/Theme.AppCompat">
+            android:parentActivityName=".MenuActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sounds_good.brrro.MenuActivity" />
