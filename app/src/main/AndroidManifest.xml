@@ -30,8 +30,7 @@
         <activity
             android:name=".WorkoutActivity"
             android:label="Log a Workout"
-            android:parentActivityName=".MenuActivity"
-            android:theme="@style/Theme.AppCompat" >
+            android:parentActivityName=".MenuActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sounds_good.brrro.MenuActivity" />
