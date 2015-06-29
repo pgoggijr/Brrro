@@ -3,6 +3,7 @@ package com.sounds_good.brrro;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +15,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class WorkoutActivity extends ActionBarActivity
+public class WorkoutActivity extends AppCompatActivity
     implements WeightDialog.WeightDialogListener{
 
 
@@ -85,6 +86,12 @@ public class WorkoutActivity extends ActionBarActivity
 
     }
 
+    protected void onPause()
+    {
+        super.onPause();
+        updateWorkout();
+    }
+
     /* opens the change weight dialog box when the weight of an exercise is pressed*/
     public void openWeightDialog(View view) {
         weightDialogCaller = view.getId();
@@ -118,7 +125,7 @@ public class WorkoutActivity extends ActionBarActivity
     }
 
     /* updates the workout in the database */
-    public void updateWorkout(View view) {
+    public void updateWorkout() {
         dbAdapter.open();
         dbAdapter.updateWorkout(workout);
         dbAdapter.getWorkout(workout.getDate()).printWorkout();
